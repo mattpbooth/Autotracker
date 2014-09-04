@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Autotracker/bin/Debug
+/Autotracker/obj/Debug
+/Autotracker.ImpulseTracker.Lib/bin/Debug
+/Autotracker.ImpulseTracker.Lib/obj/Debug
+/Autotracker.Lib/bin/Debug
+/Autotracker.Lib/obj/Debug
+/Autotracker.Test/bin/Debug
+/Autotracker.Test/obj/Debug
+/Autotracker.v12.suo

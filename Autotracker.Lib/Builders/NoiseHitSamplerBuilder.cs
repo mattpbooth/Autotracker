@@ -8,7 +8,7 @@ namespace Autotracker.Lib
 {
     public class NoiseHitSamplerBuilder : SamplerBuilder<NoiseHitSampler>
     {
-        public NoiseHitSamplerBuilder(ISamplerConfigurationFactory configurationFactory, string name)
+        public NoiseHitSamplerBuilder(IFactory<SamplerConfiguration> configurationFactory, string name)
             : base(configurationFactory, name)
         {
         }

@@ -8,7 +8,7 @@ namespace Autotracker.Lib
 {
     public class HooverSampler : Sampler
     {
-        public HooverSampler(ISamplerConfigurationFactory samplerConfiguration, string name)
+        public HooverSampler(IFactory<SamplerConfiguration> samplerConfiguration, string name)
             : base(samplerConfiguration, name)
         {
         }

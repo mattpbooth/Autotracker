@@ -52,6 +52,10 @@
       <Project>{bcc72a1f-965b-43ee-8435-5a07ea7ac498}</Project>
       <Name>Autotracker.ImpulseTracker.Lib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Autotracker.Lib.Interfaces\Autotracker.Lib.Interfaces.csproj">
+      <Project>{684c76d9-0d1c-411d-9afa-a966c90ef469}</Project>
+      <Name>Autotracker.Lib.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Autotracker.Lib\Autotracker.Lib.csproj">
       <Project>{07b8865f-73fb-4801-80d0-bf1984b9c7aa}</Project>
       <Name>Autotracker.Lib</Name>

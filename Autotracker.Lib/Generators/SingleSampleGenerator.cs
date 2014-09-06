@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autotracker.Lib.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,16 @@ namespace Autotracker.Lib
 {
     public class SingleSamplerGenerator: IGenerator
     {
-        public Sampler Sampler { get; set; }
+        private ISampler _sampler;
+
+        public SingleSamplerGenerator(ISampler sampler)
+        {
+            _sampler = sampler;
+        }
+
+        void ApplyNotes(IPattern pattern, IStrategy strategy)
+        {
+
+        }
     }
 }

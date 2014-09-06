@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Autotracker.ImpulseTracker.Lib
 {
-    public class ImpulseTrackerSamplerConfigurationFactory : ISamplerConfigurationFactory
+    public class ImpulseTrackerSamplerConfigurationFactory : IFactory<SamplerConfiguration>
     {
         #region Consts
         public const int _flagsDefault = 0;

@@ -8,7 +8,7 @@ namespace Autotracker.Lib
 {
     public class KickerSampler : Sampler
     {
-        public KickerSampler(ISamplerConfigurationFactory samplerConfiguration, string name)
+        public KickerSampler(IFactory<SamplerConfiguration> samplerConfiguration, string name)
             : base(samplerConfiguration, name)
         {
         }

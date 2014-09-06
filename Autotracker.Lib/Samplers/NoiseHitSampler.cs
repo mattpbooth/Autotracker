@@ -13,7 +13,7 @@ namespace Autotracker.Lib
         public float FilterL{get; set;}
         public float FilterH { get;  set; }
 
-        public NoiseHitSampler(ISamplerConfigurationFactory samplerConfiguration, string name)
+        public NoiseHitSampler(IFactory<SamplerConfiguration> samplerConfiguration, string name)
             : base(samplerConfiguration, name)
         {
         }

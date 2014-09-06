@@ -10,7 +10,7 @@ namespace Autotracker.Lib
     {
         protected T _sampler;
 
-        public SamplerBuilder(ISamplerConfigurationFactory configurationFactory, string name)
+        public SamplerBuilder(IFactory<SamplerConfiguration> configurationFactory, string name)
         {
             _sampler = (T)Activator.CreateInstance(typeof(T), configurationFactory, name);
         }

@@ -8,7 +8,7 @@ namespace Autotracker.Lib
 {
     public class KarplusStrongSynthSamplerBuilder : SamplerBuilder<KarplusStrongSynthSampler>
     {
-        public KarplusStrongSynthSamplerBuilder(ISamplerConfigurationFactory configurationFactory, string name) 
+        public KarplusStrongSynthSamplerBuilder(IFactory<SamplerConfiguration> configurationFactory, string name) 
             : base(configurationFactory, name)
         {
         }

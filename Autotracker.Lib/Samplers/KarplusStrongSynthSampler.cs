@@ -18,7 +18,7 @@ namespace Autotracker.Lib
         public float FilterDC{ get; set; }
         public float LengthInSeconds { get; set; }
         
-        public KarplusStrongSynthSampler(ISamplerConfigurationFactory samplerConfiguration, string name)
+        public KarplusStrongSynthSampler(IFactory<SamplerConfiguration> samplerConfiguration, string name)
             : base(samplerConfiguration, name)
         {
         }

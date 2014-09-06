@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autotracker.Lib.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,9 @@ namespace Autotracker.Lib
         public Sampler HiHatClosed { get; set; }
         public Sampler HiHatOpen { get; set; }
 
+        void ApplyNotes(IPattern pattern, IStrategy strategy)
+        {
+
+        }
     }
 }

@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Autotracker.Lib
+namespace Autotracker.Lib.Interfaces
 {
-    public interface ISamplerConfigurationFactory
+    public interface IKey
     {
-        SamplerConfiguration Get();
+        int BaseNote { get; set; }
+        bool HasNote(int Note);
     }
 }
+

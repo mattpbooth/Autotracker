@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Autotracker.Lib
+namespace Autotracker.Lib.Interfaces
 {
-    public interface IGenerator
+    public interface ITracker
     {
-        //void ApplyNotes(self, chn, pat, strat, rhythm, bbeg, blen, kroot, kchord))
+        void Save();
     }
 }

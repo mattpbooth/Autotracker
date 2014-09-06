@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autotracker.Lib.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,35 +7,85 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib
 {
-    public class Strategy
+    public class Strategy : IStrategy
     {
         public int BaseNote { get; internal set; }
         public bool[] KeyMask { get; internal set; }
         public int PatSize { get; internal set; }
         public int BlockSize { get; internal set; }
-        public bool[] Pats { get; internal set; }
-        public int PatId { get; internal set; }
         public float RhythmSpeed { get; internal set; }
         public float Rhythm { get; internal set; }
+        public int PatId { get; internal set; }
+        public List<IGenerator> Generators { get; internal set; }
 
-        public List<IGenerator> Generators { get; set; }
+        public bool[] Pats { get; set; }
 
-        public Strategy(int baseNote, bool[] keyMask, int patSize, int blockSize)
+        public class Builder : IBuilder<Strategy>
         {
-            var random = new Random();
+            private int _baseNote;
+            private bool[] _keyMask;
+            private int _blockSize;
+            private bool[] _pats;
+            private int _patId;
+            private float _rhythmSpeed;
+            private float _rhythm;
 
-            BaseNote = baseNote;
-            KeyMask = keyMask;
-            PatSize = patSize;
-            BlockSize = blockSize;
+            public Builder WithBaseNote(int baseNote)
+            {
+                _baseNote = baseNote;
+                return this;
+            }
 
-            PatId = 0;
-            RhythmSpeed = 2*random.Next(2,3);
-            Rhythm = 0.0f;// 2 * random.Next(2, 3);
-            // self.rhythm = [3]+[0]*(self.rspeed-1)+[1]+[0]*(self.rspeed-1)
-            //self.rhythm *= (self.patsize//len(self.rhythm))
+            public Builder WithKeyMask(bool[] keyMask)
+            {
+                _keyMask = keyMask;
+                return this;
+            }
 
-            NewSequence();
+            public Builder WithBlockSize(int blockSize)
+            {
+                _blockSize = blockSize;
+                return this;
+            }
+
+            public Builder WithPats(bool[] pats)
+            {
+                _pats = pats;
+                return this;
+            }
+
+            public Builder WithPatId(int patId)
+            {
+                _patId = patId;
+                return this;
+            }
+
+            public Builder WithRhythmSpeed(float rhythmSpeed)
+            {
+                _rhythmSpeed = rhythmSpeed;
+                return this;
+            }
+
+            public Builder WithRhythm(float rhythm)
+            {
+                _rhythm = rhythm;
+                return this;
+            }
+
+            Strategy Get()
+            {
+                return new Strategy
+                {
+                    BaseNote = _baseNote,
+                    KeyMask = _keyMask,
+                    BlockSize = _blockSize,
+                    PatId = _patId,
+                    Pats = _pats,
+                    Rhythm = _rhythm,
+                    RhythmSpeed = _rhythmSpeed,
+                    Generators = new List<IGenerator>()
+                };
+            }
         }
 
         public void NewSequence()
@@ -61,9 +112,12 @@ namespace Autotracker.Lib
         //    ],
         //}[self.keytype])
         }
-        public Pattern GetPattern()
+        void GeneratePattern(IPattern pattern)
+        {}
+
+        void AddGenerator(IGenerator generator)
         {
-            return null;
+            Generators.Add(generator);
         }
     }
 }

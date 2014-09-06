@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib
 {
-    public abstract class Sampler
+    public abstract class Sampler : ISampler
     {
         public SamplerConfiguration Configuration{get;internal set;}
         public string Name{get;internal set;} 
 
-        public Sampler(ISamplerConfigurationFactory samplerConfiguration, string name)
+        public Sampler(IFactory<SamplerConfiguration> samplerConfiguration, string name) : ISampler
         {
             Configuration = samplerConfiguration.Get();
             Name = Name;

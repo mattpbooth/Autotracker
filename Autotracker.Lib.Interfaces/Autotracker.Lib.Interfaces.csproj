@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{07B8865F-73FB-4801-80D0-BF1984B9C7AA}</ProjectGuid>
+    <ProjectGuid>{684C76D9-0D1C-411D-9AFA-A966C90EF469}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Autotracker.Lib</RootNamespace>
-    <AssemblyName>Autotracker.Lib</AssemblyName>
+    <RootNamespace>Autotracker.Lib.Interfaces</RootNamespace>
+    <AssemblyName>Autotracker.Lib.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,36 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builders\SamplerBuilder.cs" />
-    <Compile Include="Builders\KarplusStrongSynthSamplerBuilder.cs" />
-    <Compile Include="Builders\NoiseHitSamplerBuilder.cs" />
-    <Compile Include="Definitions.cs" />
-    <Compile Include="Factories\StrategyFactory.cs" />
-    <Compile Include="Generators\AmbientMelodyGenerator.cs" />
-    <Compile Include="Generators\BassGenerator.cs" />
-    <Compile Include="Generators\DrumsGenerator.cs" />
-    <Compile Include="Generators\SingleSampleGenerator.cs" />
-    <Compile Include="Keys\GenericOctaveKey.cs" />
-    <Compile Include="Keys\MajorKey.cs" />
-    <Compile Include="Keys\MajorPentatonicKey.cs" />
-    <Compile Include="Keys\MinorKey.cs" />
-    <Compile Include="Keys\MinorPentatonicKey.cs" />
-    <Compile Include="Patterns\Pattern.cs" />
-    <Compile Include="Samplers\Sampler.cs" />
-    <Compile Include="Samplers\KickerSampler.cs" />
-    <Compile Include="Samplers\NoiseHitSampler.cs" />
-    <Compile Include="Samplers\HooverSampler.cs" />
-    <Compile Include="Samplers\KarplusStrongSynthSampler.cs" />
+    <Compile Include="Builders\IBuilder.cs" />
+    <Compile Include="Factories\IFactory.cs" />
+    <Compile Include="Generators\IGenerator.cs" />
+    <Compile Include="Keys\IKey.cs" />
+    <Compile Include="Patterns\IPattern.cs" />
+    <Compile Include="Random\IRandom.cs" />
+    <Compile Include="Samplers\ISampler.cs" />
+    <Compile Include="Strategies\IStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Samplers\SamplerConfiguration.cs" />
-    <Compile Include="Strategies\Strategy.cs" />
-    <Compile Include="Trackers\Tracker.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Autotracker.Lib.Interfaces\Autotracker.Lib.Interfaces.csproj">
-      <Project>{684c76d9-0d1c-411d-9afa-a966c90ef469}</Project>
-      <Name>Autotracker.Lib.Interfaces</Name>
-    </ProjectReference>
+    <Compile Include="Trackers\ITracker.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

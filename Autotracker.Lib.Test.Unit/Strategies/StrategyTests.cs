@@ -51,5 +51,12 @@ namespace Autotracker.Test.Strategies
             _strategy.AddGenerator(new StubIGenerator());
             Assert.IsTrue(_strategy.GeneratePattern(new StubIPattern()));
         }
+
+        [TestMethod]
+        public void GeneratePredictablePatternSuccess()
+        {
+            // Requires the random stub to return a set of predictable values...
+            throw new NotImplementedException();
+        }
     }
 }

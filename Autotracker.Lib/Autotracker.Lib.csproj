@@ -39,10 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builders\SamplerBuilder.cs" />
-    <Compile Include="Builders\KarplusStrongSynthSamplerBuilder.cs" />
-    <Compile Include="Builders\NoiseHitSamplerBuilder.cs" />
     <Compile Include="Definitions.cs" />
+    <Compile Include="Factories\SamplerFactory.cs" />
     <Compile Include="Factories\StrategyFactory.cs" />
     <Compile Include="Generators\AmbientMelodyGenerator.cs" />
     <Compile Include="Generators\BassGenerator.cs" />
@@ -60,7 +58,6 @@
     <Compile Include="Samplers\HooverSampler.cs" />
     <Compile Include="Samplers\KarplusStrongSynthSampler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Samplers\SamplerConfiguration.cs" />
     <Compile Include="Strategies\Strategy.cs" />
     <Compile Include="Trackers\Tracker.cs" />
   </ItemGroup>

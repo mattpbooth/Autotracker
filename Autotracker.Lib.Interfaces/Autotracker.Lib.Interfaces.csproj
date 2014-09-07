@@ -41,9 +41,11 @@
   <ItemGroup>
     <Compile Include="Builders\IBuilder.cs" />
     <Compile Include="Factories\IFactory.cs" />
+    <Compile Include="Factories\IRegistryFactory.cs" />
     <Compile Include="Generators\IGenerator.cs" />
     <Compile Include="Keys\IKey.cs" />
     <Compile Include="Patterns\IPattern.cs" />
+    <Compile Include="Prototypes\IPrototype.cs" />
     <Compile Include="Random\IRandom.cs" />
     <Compile Include="Samplers\ISampler.cs" />
     <Compile Include="Strategies\IStrategy.cs" />

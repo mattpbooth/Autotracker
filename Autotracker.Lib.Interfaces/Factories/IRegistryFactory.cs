@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib.Interfaces
 {
-    /// <summary>
-    /// Will generate samples consistent with a particular instrument's sound.
-    /// </summary>
-    public interface ISampler
+    public interface IRegistryFactory<T, U>
     {
-        bool Generate();
+        T GetByKey(U key);
     }
 }

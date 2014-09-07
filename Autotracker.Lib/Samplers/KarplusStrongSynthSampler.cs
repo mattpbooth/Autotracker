@@ -10,19 +10,80 @@ namespace Autotracker.Lib
     //http://en.wikipedia.org/wiki/Karplus%E2%80%93Strong_string_synthesis
     public class KarplusStrongSynthSampler : Sampler
     {
-        public float Frequency { get; set; }
-        public float Decay { get; set; }
-        public float NFrequencyMultiply { get; set; }
-        public float Filter0 { get; set; }
-        public float FilterN { get; set; }
-        public float FilterF { get; set; }
-        public float FilterDC{ get; set; }
-        public float LengthInSeconds { get; set; }
+        public float Decay { get; internal set; }
+        public float FrequencyMultiply { get; internal set; }
+        public float Filter0 { get; internal set; }
+        public float FilterN { get; internal set; }
+        public float FilterF { get; internal set; }
+        public float FilterDC{ get; internal set; }
+        public float LengthInSeconds { get; internal set; }
         
-        //public KarplusStrongSynthSampler(IFactory<SamplerConfiguration> samplerConfiguration, string name)
-        //    : base(samplerConfiguration, name)
-        //{
-        //}
+        public class KarplusStrongSynthSamplerBuilder : Sampler.Builder
+        {
+            private float _decay;
+            private float _frequencyMultiply;
+            private float _filter0;
+            private float _filterN;
+            private float _filterF;
+            private float _filterDC;
+            private float _lengthInSeconds;
+
+            public KarplusStrongSynthSamplerBuilder WithDecay(float decay)
+            {
+                _decay = decay;
+                return this;
+            }
+
+            public KarplusStrongSynthSamplerBuilder WithFrequencyMultiply(float frequencyMultiply)
+            {
+                _frequencyMultiply = frequencyMultiply;
+                return this;
+            }
+
+            public KarplusStrongSynthSamplerBuilder WithFilter0(float filter0)
+            {
+                _filter0 = filter0;
+                return this;
+            }
+
+            public KarplusStrongSynthSamplerBuilder WithFilterN(float filterN)
+            {
+                _filterN = filterN;
+                return this;
+            }
+
+            public KarplusStrongSynthSamplerBuilder WithFilterF(float filterF)
+            {
+                _filterF = filterF;
+                return this;
+            }
+
+            public KarplusStrongSynthSamplerBuilder WithFilterDC(float filterDC)
+            {
+                _filterDC = filterDC;
+                return this;
+            }
+
+            public KarplusStrongSynthSamplerBuilder WithLengthInSeconds(float lengthInSeconds)
+            {
+                _lengthInSeconds = lengthInSeconds;
+                return this;
+            }
+
+            protected override Sampler BuildImpl()
+            {
+                return new KarplusStrongSynthSampler
+                {
+                    Decay = _decay,
+                    FrequencyMultiply = _frequencyMultiply,
+                    Filter0 = _filter0,
+                    FilterN = _filterN,
+                    FilterF = _filterF,
+                    FilterDC = _filterDC,
+                    LengthInSeconds = _lengthInSeconds
+                };
+            }
+        }
         protected override List<float> GenerateImpl()
         {
             // generate waveform
@@ -77,7 +138,7 @@ namespace Autotracker.Lib
                         nFrequencyCounter -= 1.0f;
                     }
 
-                    nFrequencyCounter += NFrequencyMultiply;
+                    nFrequencyCounter += FrequencyMultiply;
                     qn = (nFrequencyValue * volumeCurrent - qn) * Filter0 + qn;
                     volumeCurrent -= nVolumeDecay;
                     noise[i] += qn;
@@ -90,11 +151,15 @@ namespace Autotracker.Lib
                 i = (i + 1) % delay;
             }
 
-            var config = Configuration;
-            config.LoopEnd = length;
-            config.LoopBegin = length - delay;
+            LoopEnd = length;
+            LoopBegin = length - delay;
 
             return list;
+        }
+
+        public override Sampler Clone()
+        {
+            return (Sampler)MemberwiseClone();
         }
     }
 }

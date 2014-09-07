@@ -106,6 +106,18 @@
         <member name="P:Autotracker.Lib.Interfaces.Fakes.StubIPattern.ali::Autotracker#Lib#Interfaces#IPattern#Rows">
             <summary>Sets the stub of IPattern.get_Rows()</summary>
         </member>
+        <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIPrototype`1">
+            <summary>Stub type of Autotracker.Lib.Interfaces.IPrototype`1</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIPrototype`1.#ctor">
+            <summary>Initializes a new instance of type StubIPrototype</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIPrototype`1.ali::Autotracker#Lib#Interfaces#IPrototype{T}#Clone">
+            <summary>Sets the stub of IPrototype`1.Clone()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIPrototype`1.Clone">
+            <summary>Sets the stub of IPrototype`1.Clone()</summary>
+        </member>
         <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1">
             <summary>Stub type of Autotracker.Lib.Interfaces.IRandom`1</summary>
         </member>
@@ -123,6 +135,18 @@
         </member>
         <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.GetNextRangeT0T0">
             <summary>Sets the stub of IRandom`1.GetNextRange(!0 min, !0 max)</summary>
+        </member>
+        <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIRegistryFactory`2">
+            <summary>Stub type of Autotracker.Lib.Interfaces.IRegistryFactory`2</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRegistryFactory`2.#ctor">
+            <summary>Initializes a new instance of type StubIRegistryFactory</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRegistryFactory`2.ali::Autotracker#Lib#Interfaces#IRegistryFactory{T@U}#GetByKey(`1)">
+            <summary>Sets the stub of IRegistryFactory`2.GetByKey(!1 key)</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRegistryFactory`2.GetByKeyT1">
+            <summary>Sets the stub of IRegistryFactory`2.GetByKey(!1 key)</summary>
         </member>
         <member name="T:Autotracker.Lib.Interfaces.Fakes.StubISampler">
             <summary>Stub type of Autotracker.Lib.Interfaces.ISampler</summary>

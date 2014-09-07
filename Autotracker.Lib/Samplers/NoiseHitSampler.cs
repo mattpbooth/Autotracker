@@ -9,7 +9,6 @@ namespace Autotracker.Lib
 {
     public class NoiseHitSampler : Sampler
     {
-        public float GlobalVolume { get; set; }
         public float Decay{get; set;}
         public float FilterL{get; set;}
         public float FilterH { get;  set; }
@@ -23,6 +22,11 @@ namespace Autotracker.Lib
         protected override List<float> GenerateImpl()
         {
             throw new NotImplementedException();
+        }
+
+        public override Sampler Clone()
+        {
+            return (Sampler)MemberwiseClone();
         }
     }
 }

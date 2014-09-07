@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace Autotracker.Lib.Interfaces
 {
     /// <summary>
-    /// Will generate samples consistent with a particular instrument's sound.
+    /// Must provide a clone of itself, I don't want to get into deep/shallow etc if I can avoid it.
     /// </summary>
-    public interface ISampler
+    public interface IPrototype<T>
     {
-        bool Generate();
+        T Clone();
     }
 }

@@ -9,10 +9,14 @@ namespace Autotracker.Lib
 {
     public class KickerSampler : Sampler
     {
-        //public KickerSampler(IFactory<SamplerConfiguration> samplerConfiguration, string name)
-        //    : base(samplerConfiguration, name)
-        //{
-        //}
+        public string TypeName { get { return "KickerSampler"; } }
+        public class KickerSamplerBuilder : Sampler.Builder
+        {
+            protected override Sampler BuildImpl()
+            {
+                return new KickerSampler();
+            }
+        }
 
         // Sampler
         protected override List<float> GenerateImpl()
@@ -49,6 +53,11 @@ namespace Autotracker.Lib
 
             }
             return list;
+        }
+
+        public override Sampler Clone()
+        {
+            return (Sampler)MemberwiseClone();
         }
     }
 }

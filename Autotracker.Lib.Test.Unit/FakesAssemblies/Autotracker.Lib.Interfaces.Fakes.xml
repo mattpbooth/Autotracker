@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Autotracker.Lib.Interfaces.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIBuilder`1">
+            <summary>Stub type of Autotracker.Lib.Interfaces.IBuilder`1</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIBuilder`1.#ctor">
+            <summary>Initializes a new instance of type StubIBuilder</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIBuilder`1.ali::Autotracker#Lib#Interfaces#IBuilder{T}#Build">
+            <summary>Sets the stub of IBuilder`1.Build()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIBuilder`1.Build">
+            <summary>Sets the stub of IBuilder`1.Build()</summary>
+        </member>
+        <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIFactory`1">
+            <summary>Stub type of Autotracker.Lib.Interfaces.IFactory`1</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIFactory`1.#ctor">
+            <summary>Initializes a new instance of type StubIFactory</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIFactory`1.ali::Autotracker#Lib#Interfaces#IFactory{T}#Get">
+            <summary>Sets the stub of IFactory`1.Get()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIFactory`1.Get">
+            <summary>Sets the stub of IFactory`1.Get()</summary>
+        </member>
+        <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIGenerator">
+            <summary>Stub type of Autotracker.Lib.Interfaces.IGenerator</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.#ctor">
+            <summary>Initializes a new instance of type StubIGenerator</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.ApplyNotesIPatternIStrategy">
+            <summary>Sets the stub of IGenerator.ApplyNotes(IPattern pattern, IStrategy strategy)</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.AttachBackingFieldToSize">
+            <summary>Attaches delegates to emulate StubIGenerator.Size as a property with a backing field.</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.ali::Autotracker#Lib#Interfaces#IGenerator#ApplyNotes(Autotracker.Lib.Interfaces.IPattern,Autotracker.Lib.Interfaces.IStrategy)">
+            <summary>Sets the stub of IGenerator.ApplyNotes(IPattern pattern, IStrategy strategy)</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.SizeGet">
+            <summary>Sets the stub of IGenerator.get_Size()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.SizeSetInt32">
+            <summary>Sets the stub of IGenerator.set_Size(Int32 value)</summary>
+        </member>
+        <member name="P:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.ali::Autotracker#Lib#Interfaces#IGenerator#Size">
+            <summary>Sets the stub of IGenerator.get_Size()</summary>
+        </member>
+        <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIKey">
+            <summary>Stub type of Autotracker.Lib.Interfaces.IKey</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIKey.#ctor">
+            <summary>Initializes a new instance of type StubIKey</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIKey.AttachBackingFieldToBaseNote">
+            <summary>Attaches delegates to emulate StubIKey.BaseNote as a property with a backing field.</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIKey.ali::Autotracker#Lib#Interfaces#IKey#HasNote(System.Int32)">
+            <summary>Sets the stub of IKey.HasNote(Int32 Note)</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIKey.BaseNoteGet">
+            <summary>Sets the stub of IKey.get_BaseNote()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIKey.BaseNoteSetInt32">
+            <summary>Sets the stub of IKey.set_BaseNote(Int32 value)</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIKey.HasNoteInt32">
+            <summary>Sets the stub of IKey.HasNote(Int32 Note)</summary>
+        </member>
+        <member name="P:Autotracker.Lib.Interfaces.Fakes.StubIKey.ali::Autotracker#Lib#Interfaces#IKey#BaseNote">
+            <summary>Sets the stub of IKey.get_BaseNote()</summary>
+        </member>
+        <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIPattern">
+            <summary>Stub type of Autotracker.Lib.Interfaces.IPattern</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIPattern.#ctor">
+            <summary>Initializes a new instance of type StubIPattern</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIPattern.AttachBackingFieldToData">
+            <summary>Attaches delegates to emulate StubIPattern.Data as a property with a backing field.</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIPattern.AttachBackingFieldToRows">
+            <summary>Attaches delegates to emulate StubIPattern.Rows as a property with a backing field.</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIPattern.DataGet">
+            <summary>Sets the stub of IPattern.get_Data()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIPattern.DataSetByteArray">
+            <summary>Sets the stub of IPattern.set_Data(Byte[] value)</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIPattern.RowsGet">
+            <summary>Sets the stub of IPattern.get_Rows()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIPattern.RowsSetInt32">
+            <summary>Sets the stub of IPattern.set_Rows(Int32 value)</summary>
+        </member>
+        <member name="P:Autotracker.Lib.Interfaces.Fakes.StubIPattern.ali::Autotracker#Lib#Interfaces#IPattern#Data">
+            <summary>Sets the stub of IPattern.get_Data()</summary>
+        </member>
+        <member name="P:Autotracker.Lib.Interfaces.Fakes.StubIPattern.ali::Autotracker#Lib#Interfaces#IPattern#Rows">
+            <summary>Sets the stub of IPattern.get_Rows()</summary>
+        </member>
+        <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1">
+            <summary>Stub type of Autotracker.Lib.Interfaces.IRandom`1</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.#ctor">
+            <summary>Initializes a new instance of type StubIRandom</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.ali::Autotracker#Lib#Interfaces#IRandom{T}#GetNext">
+            <summary>Sets the stub of IRandom`1.GetNext()</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.ali::Autotracker#Lib#Interfaces#IRandom{T}#GetNextRange(`0,`0)">
+            <summary>Sets the stub of IRandom`1.GetNextRange(!0 min, !0 max)</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.GetNext">
+            <summary>Sets the stub of IRandom`1.GetNext()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.GetNextRangeT0T0">
+            <summary>Sets the stub of IRandom`1.GetNextRange(!0 min, !0 max)</summary>
+        </member>
+        <member name="T:Autotracker.Lib.Interfaces.Fakes.StubISampler">
+            <summary>Stub type of Autotracker.Lib.Interfaces.ISampler</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubISampler.#ctor">
+            <summary>Initializes a new instance of type StubISampler</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubISampler.ali::Autotracker#Lib#Interfaces#ISampler#Generate">
+            <summary>Sets the stub of ISampler.Generate()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubISampler.Generate">
+            <summary>Sets the stub of ISampler.Generate()</summary>
+        </member>
+        <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIStrategy">
+            <summary>Stub type of Autotracker.Lib.Interfaces.IStrategy</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.#ctor">
+            <summary>Initializes a new instance of type StubIStrategy</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.AddGeneratorIGenerator">
+            <summary>Sets the stub of IStrategy.AddGenerator(IGenerator generator)</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.ali::Autotracker#Lib#Interfaces#IStrategy#AddGenerator(Autotracker.Lib.Interfaces.IGenerator)">
+            <summary>Sets the stub of IStrategy.AddGenerator(IGenerator generator)</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.ali::Autotracker#Lib#Interfaces#IStrategy#GeneratePattern(Autotracker.Lib.Interfaces.IPattern)">
+            <summary>Sets the stub of IStrategy.GeneratePattern(IPattern pattern)</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.GeneratePatternIPattern">
+            <summary>Sets the stub of IStrategy.GeneratePattern(IPattern pattern)</summary>
+        </member>
+        <member name="T:Autotracker.Lib.Interfaces.Fakes.StubITracker">
+            <summary>Stub type of Autotracker.Lib.Interfaces.ITracker</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubITracker.#ctor">
+            <summary>Initializes a new instance of type StubITracker</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubITracker.ali::Autotracker#Lib#Interfaces#ITracker#Save">
+            <summary>Sets the stub of ITracker.Save()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubITracker.Save">
+            <summary>Sets the stub of ITracker.Save()</summary>
+        </member>
+    </members>
+</doc>

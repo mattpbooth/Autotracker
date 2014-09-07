@@ -2,38 +2,54 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Autotracker.Lib;
 using Autotracker.Lib.Interfaces;
+using Autotracker.Lib.Interfaces.Fakes;
 
 namespace Autotracker.Test.Strategies
 {
     [TestClass]
     public class StrategyTests
     {
-        IStrategy _strategy;
+        private StrategyFactory _strategyFactory;
+        private IStrategy _strategy;
 
         [TestInitialize]
         public void Setup()
         {
-            // TODO: DI
-            _strategy = StrategyFactory.Get();
+            // Might get a DI framework for this... Unity?
+            _strategyFactory = new StrategyFactory
+            {
+                 _majorKey = new StubIKey(),
+                 _minorKey = new StubIKey(),
+                 _randomInt = new StubIRandom<int>(),
+                 _randomDouble = new StubIRandom<double>()
+            };
+            _strategy = _strategyFactory.Get();
         }
 
         [TestMethod]
         public void AddGeneratorSuccess()
         {
-           // _strategy.AddGenerator(new IGenerator());
-            throw new NotImplementedException();
+            Assert.AreEqual(_strategy.AddGenerator(new StubIGenerator()), 1);
         }
 
         [TestMethod]
-        public void AddMoreThanOneGeneratorSuccess()
+        public void AddTwoGeneratorSuccess()
         {
-            throw new NotImplementedException();
+            _strategy.AddGenerator(new StubIGenerator());
+            Assert.AreEqual(_strategy.AddGenerator(new StubIGenerator()), 2);
+        }
+
+        [TestMethod]
+        public void GeneratePatternNoGeneratorFailure()
+        {
+            Assert.IsFalse(_strategy.GeneratePattern(new StubIPattern()));
         }
 
         [TestMethod]
         public void GeneratePatternSuccess()
         {
-            throw new NotImplementedException();
+            _strategy.AddGenerator(new StubIGenerator());
+            Assert.IsTrue(_strategy.GeneratePattern(new StubIPattern()));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autotracker.Lib.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,10 @@ namespace Autotracker.Lib
 {
     public class KickerSampler : Sampler
     {
-        public KickerSampler(IFactory<SamplerConfiguration> samplerConfiguration, string name)
-            : base(samplerConfiguration, name)
-        {
-        }
+        //public KickerSampler(IFactory<SamplerConfiguration> samplerConfiguration, string name)
+        //    : base(samplerConfiguration, name)
+        //{
+        //}
 
         // Sampler
         protected override List<float> GenerateImpl()

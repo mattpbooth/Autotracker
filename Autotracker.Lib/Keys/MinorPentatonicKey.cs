@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Autotracker.Lib.Keys
+namespace Autotracker.Lib
 {
-    public class MinorPentatonicKey
+    public class MinorPentatonicKey : GenericOctaveKey
     {
-        private const bool[] _keyMask = { true, false, true, true, false, true, false, true, true, false, true, false };
+        private readonly bool[] _keyMask = { true, false, true, true, false, true, false, true, true, false, true, false };
 
-        private override bool[] GetKeyMaskImpl()
+        protected override bool[] GetKeyMaskImpl()
         {
             return _keyMask;
         }

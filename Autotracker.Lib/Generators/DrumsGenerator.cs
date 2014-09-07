@@ -14,9 +14,11 @@ namespace Autotracker.Lib
         public Sampler HiHatClosed { get; set; }
         public Sampler HiHatOpen { get; set; }
 
-        void ApplyNotes(IPattern pattern, IStrategy strategy)
+        public void ApplyNotes(IPattern pattern, IStrategy strategy)
         {
 
         }
+
+        public int Size { get; set; }
     }
 }

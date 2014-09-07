@@ -22,7 +22,7 @@ namespace Autotracker.Lib
 
         public void AddPattern(Strategy strategy)
         {
-            _patternPlayList.Add(new PatternPlaylistEntry { Pattern = strategy.GetPattern(), Order = _patternPlayList.Count });
+          //  _patternPlayList.Add(new PatternPlaylistEntry { Pattern = strategy.GetPattern(), Order = _patternPlayList.Count });
         }
 
         public abstract void Save();

@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib
 {
-    public class GenericOctaveKey : IKey
+    public abstract class GenericOctaveKey : IKey
     {
-        int BaseNote { get; set; }
+        public int BaseNote { get; set; }
 
         public bool HasNote(int Note)
         {
             return GetKeyMaskImpl()[(Note - BaseNote) % Definitions._notesInOctave];
         }
 
-        public abstract bool[] GetKeyMaskImpl();
+        protected abstract bool[] GetKeyMaskImpl();
     }
 }

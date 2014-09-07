@@ -16,9 +16,11 @@ namespace Autotracker.Lib
             _sampler = sampler;
         }
 
-        void ApplyNotes(IPattern pattern, IStrategy strategy)
+        public void ApplyNotes(IPattern pattern, IStrategy strategy)
         {
 
         }
+
+        public int Size{get; set;}
     }
 }

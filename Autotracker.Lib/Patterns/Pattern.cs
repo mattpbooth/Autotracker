@@ -9,6 +9,7 @@ namespace Autotracker.Lib
 {
     public class Pattern : IPattern
     {
-       
+        public byte[] Data { get; set; }
+        public int Rows { get; set; }
     }
 }

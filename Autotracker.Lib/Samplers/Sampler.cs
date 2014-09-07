@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autotracker.Lib.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,11 +12,11 @@ namespace Autotracker.Lib
         public SamplerConfiguration Configuration{get;internal set;}
         public string Name{get;internal set;} 
 
-        public Sampler(IFactory<SamplerConfiguration> samplerConfiguration, string name) : ISampler
-        {
-            Configuration = samplerConfiguration.Get();
-            Name = Name;
-        }
+        //public Sampler(IFactory<SamplerConfiguration> samplerConfiguration, string name) : ISampler
+        //{
+        //    Configuration = samplerConfiguration.Get();
+        //    Name = Name;
+        //}
 
         public bool Generate()
         {

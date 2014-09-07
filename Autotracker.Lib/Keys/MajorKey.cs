@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Autotracker.Lib.Keys
+namespace Autotracker.Lib
 {
     public class MajorKey : GenericOctaveKey
     {
-        private const bool[] _keyMask = { true, false, false, true, false, true, false, true, false, false, true, false };
+        private readonly bool[] _keyMask = { true, false, false, true, false, true, false, true, false, false, true, false };
 
-        private override bool[] GetKeyMaskImpl()
+        protected override bool[] GetKeyMaskImpl()
         {
             return _keyMask;
         }

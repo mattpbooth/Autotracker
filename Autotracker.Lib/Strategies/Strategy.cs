@@ -10,7 +10,7 @@ namespace Autotracker.Lib
     public class Strategy : IStrategy
     {
         public int BaseNote { get; internal set; }
-        public bool[] KeyMask { get; internal set; }
+        public IKey Key { get; internal set; }
         public int PatSize { get; internal set; }
         public int BlockSize { get; internal set; }
         public float RhythmSpeed { get; internal set; }
@@ -23,7 +23,8 @@ namespace Autotracker.Lib
         public class Builder : IBuilder<Strategy>
         {
             private int _baseNote;
-            private bool[] _keyMask;
+            private IKey _key;
+            private int _patSize;
             private int _blockSize;
             private bool[] _pats;
             private int _patId;
@@ -36,9 +37,15 @@ namespace Autotracker.Lib
                 return this;
             }
 
-            public Builder WithKeyMask(bool[] keyMask)
+            public Builder WithKeyMask(IKey key)
             {
-                _keyMask = keyMask;
+                _key = key;
+                return this;
+            }
+
+            public Builder WithPatSize(int patSize)
+            {
+                _patSize = patSize;
                 return this;
             }
 
@@ -72,12 +79,12 @@ namespace Autotracker.Lib
                 return this;
             }
 
-            Strategy Get()
+            public Strategy Build()
             {
                 return new Strategy
                 {
                     BaseNote = _baseNote,
-                    KeyMask = _keyMask,
+                    Key = _key,
                     BlockSize = _blockSize,
                     PatId = _patId,
                     Pats = _pats,
@@ -112,12 +119,19 @@ namespace Autotracker.Lib
         //    ],
         //}[self.keytype])
         }
-        void GeneratePattern(IPattern pattern)
-        {}
+        public bool GeneratePattern(IPattern pattern)
+        {
+            if(Generators.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
 
-        void AddGenerator(IGenerator generator)
+        public int AddGenerator(IGenerator generator)
         {
             Generators.Add(generator);
+            return Generators.Count;
         }
     }
 }

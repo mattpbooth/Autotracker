@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autotracker.Lib.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,10 +19,10 @@ namespace Autotracker.Lib
         public float FilterDC{ get; set; }
         public float LengthInSeconds { get; set; }
         
-        public KarplusStrongSynthSampler(IFactory<SamplerConfiguration> samplerConfiguration, string name)
-            : base(samplerConfiguration, name)
-        {
-        }
+        //public KarplusStrongSynthSampler(IFactory<SamplerConfiguration> samplerConfiguration, string name)
+        //    : base(samplerConfiguration, name)
+        //{
+        //}
         protected override List<float> GenerateImpl()
         {
             // generate waveform

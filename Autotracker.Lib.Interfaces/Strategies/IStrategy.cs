@@ -8,7 +8,7 @@ namespace Autotracker.Lib.Interfaces
 {
     public interface IStrategy
     {
-        void GeneratePattern(IPattern pattern);
-        void AddGenerator(IGenerator generator);
+        bool GeneratePattern(IPattern pattern);
+        int AddGenerator(IGenerator generator);
     }
 }

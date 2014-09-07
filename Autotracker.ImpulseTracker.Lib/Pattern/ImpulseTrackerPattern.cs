@@ -29,19 +29,19 @@ namespace Autotracker.ImpulseTracker.Lib
             public byte EffectParameter{get;set;}
 
         }
-        public ImpulseTrackerPattern(int rows) : base(rows)
-        {
-            Debug.Assert(rows >= _modPlugMinRows, "Too few rows");
-            Debug.Assert(rows <= _impulseTrackerMaxRows, "Too many rows");
+        //public ImpulseTrackerPattern(int rows) : base(rows)
+        //{
+        //    Debug.Assert(rows >= _modPlugMinRows, "Too few rows");
+        //    Debug.Assert(rows <= _impulseTrackerMaxRows, "Too many rows");
 
-            var trackerStruct = new ImpulseTrackerStruct
-            {
-                Note = _impulseTrackerDefaultNote,
-                Instrument = _impulseTracerDefaultInstrument,
-                Volume = _impulseTracerDefaultVolume,
-                EffectType = _impulseTracerDefaultEffectType,
-                EffectParameter = _impulseTracerDefaultEffectParameter
-            };
-        }
+        //    var trackerStruct = new ImpulseTrackerStruct
+        //    {
+        //        Note = _impulseTrackerDefaultNote,
+        //        Instrument = _impulseTracerDefaultInstrument,
+        //        Volume = _impulseTracerDefaultVolume,
+        //        EffectType = _impulseTracerDefaultEffectType,
+        //        EffectParameter = _impulseTracerDefaultEffectParameter
+        //    };
+        //}
     }
 }

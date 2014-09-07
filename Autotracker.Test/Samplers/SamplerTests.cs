@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Autotracker.Lib;
 using System.Collections.Generic;
 using Autotracker.ImpulseTracker.Lib;
-using Autotracker.Lib.Interfaces.Factories;
+using Autotracker.Lib.Interfaces;
 
 namespace Autotracker.Test
 {

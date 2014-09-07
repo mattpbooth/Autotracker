@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib.Interfaces
 {
-    public interface IRandom<T> where T: struct
+    public interface IRandom<T>// where T: struct
     {
         T GetNext();
         T GetNextRange(T min, T max);

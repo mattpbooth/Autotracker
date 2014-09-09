@@ -54,6 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Generators\GeneratorTests.cs" />
     <Compile Include="Samplers\SamplerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Strategies\StrategyTests.cs" />

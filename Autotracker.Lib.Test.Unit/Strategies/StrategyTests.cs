@@ -4,7 +4,7 @@ using Autotracker.Lib;
 using Autotracker.Lib.Interfaces;
 using Autotracker.Lib.Interfaces.Fakes;
 
-namespace Autotracker.Test.Strategies
+namespace Autotracker.Lib.Test.Unit
 {
     [TestClass]
     public class StrategyTests

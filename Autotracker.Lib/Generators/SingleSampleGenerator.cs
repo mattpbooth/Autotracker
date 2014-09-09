@@ -7,20 +7,13 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib
 {
-    public class SingleSamplerGenerator: IGenerator
+    public abstract class SingleSamplerGenerator: Generator
     {
-        private ISampler _sampler;
+        protected ISampler _sampler;
 
         public SingleSamplerGenerator(ISampler sampler)
         {
             _sampler = sampler;
         }
-
-        public void ApplyNotes(IPattern pattern, IStrategy strategy)
-        {
-
-        }
-
-        public int Size{get; set;}
     }
 }

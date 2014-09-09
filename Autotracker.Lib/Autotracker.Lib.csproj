@@ -40,11 +40,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Definitions.cs" />
+    <Compile Include="Factories\GeneratorFactory.cs" />
     <Compile Include="Factories\SamplerFactory.cs" />
     <Compile Include="Factories\StrategyFactory.cs" />
     <Compile Include="Generators\AmbientMelodyGenerator.cs" />
     <Compile Include="Generators\BassGenerator.cs" />
     <Compile Include="Generators\DrumsGenerator.cs" />
+    <Compile Include="Generators\Generator.cs" />
     <Compile Include="Generators\SingleSampleGenerator.cs" />
     <Compile Include="Keys\GenericOctaveKey.cs" />
     <Compile Include="Keys\MajorKey.cs" />

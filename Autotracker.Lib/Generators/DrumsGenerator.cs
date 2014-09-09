@@ -7,18 +7,21 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib
 {
-    public class DrumsGenerator : IGenerator
+    public class DrumsGenerator : Generator
     {
         public Sampler Kick { get; set; }
         public Sampler Snare { get; set; }
         public Sampler HiHatClosed { get; set; }
         public Sampler HiHatOpen { get; set; }
 
-        public void ApplyNotes(IPattern pattern, IStrategy strategy)
+        public override void ApplyNotes(IPattern pattern, IStrategy strategy)
         {
 
         }
 
-        public int Size { get; set; }
+        public override Generator Clone()
+        {
+            return (Generator)MemberwiseClone();
+        }
     }
 }

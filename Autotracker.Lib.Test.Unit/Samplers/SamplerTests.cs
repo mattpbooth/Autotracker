@@ -4,7 +4,7 @@ using Autotracker.Lib;
 using System.Collections.Generic;
 using Autotracker.Lib.Interfaces;
 
-namespace Autotracker.Test
+namespace Autotracker.Lib.Test.Unit
 {
     [TestClass]
     public class SamplerTests

@@ -14,5 +14,15 @@ namespace Autotracker.Lib
         {
 
         }
+
+        public override void ApplyNotes(IPattern pattern, IStrategy strategy)
+        {
+
+        }
+
+        public override Generator Clone()
+        {
+            return (Generator)MemberwiseClone();
+        }
     }
 }

@@ -9,12 +9,6 @@ namespace Autotracker.Lib
 {
     public class HooverSampler : Sampler
     {
-        //public HooverSampler(IFactory<SamplerConfiguration> samplerConfiguration, string name)
-        //    : base(samplerConfiguration, name)
-        //{
-        //}
-
-        // Sampler
         protected override List<float> GenerateImpl()
         {
             throw new NotImplementedException();

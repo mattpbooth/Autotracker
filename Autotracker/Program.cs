@@ -20,54 +20,16 @@ namespace Autotracker
             // Felt like I needed to do the below before getting a better abstraction picture.
             
             // DI
-            //IFactory<SamplerConfiguration> samplerConfigurationFactory = new ImpulseTrackerSamplerConfigurationFactory();
+            //SamplerFactory samplerFactory;
             //Tracker tracker = new ImpulseTrackerTracker();
 
             //Console.Write("Generating Samples");
-            //var guitarSampler = new KarplusStrongSynthSamplerBuilder(samplerConfigurationFactory, "KS Guitar")
-            //    .WithFrequency(Definitions._middleC)
-            //    .WithDecay(0.005f)
-            //    .WithNFrequencyMultiply(1.0f)
-            //    .WithFilter0(0.0f)
-            //    .WithFilterN(0.6f)
-            //    .WithFilterF(0.004f)
-            //    .WithFilterDC(0.01f)
-            //    .WithLengthInSeconds(1.0f)
-            //    .Build();
-
-            //var bassSampler = new KarplusStrongSynthSamplerBuilder(samplerConfigurationFactory, "KS Bass")
-            //    .WithFrequency(Definitions._middleC / 4.0f)
-            //    .WithDecay(0.005f)
-            //    .WithNFrequencyMultiply(0.5f)
-            //    .WithFilter0(0.2f)
-            //    .WithFilterN(0.2f)
-            //    .WithFilterF(0.005f)
-            //    .WithFilterDC(0.01f)
-            //    .WithLengthInSeconds(0.7f)
-            //    .Build();
-
-            //var kickSampler = new KickerSampler(samplerConfigurationFactory, "Kick");
-
-            //var hiHatClosedSampler = new NoiseHitSamplerBuilder( samplerConfigurationFactory, "NH Hihat Closed")
-            //    .WithGlobalVolume(32)
-            //    .WithDecay(0.03f)
-            //    .WithFilterL(0.99f)
-            //    .WithFilterH(0.2f)
-            //    .Build();
-
-            //var hiHatOpenSampler = new NoiseHitSamplerBuilder(samplerConfigurationFactory, "NH Hihat Closed")
-            //    .WithGlobalVolume(32)
-            //    .WithDecay(0.5f)
-            //    .WithFilterL(0.99f)
-            //    .WithFilterH(0.2f)
-            //    .Build();
-
-            //var snareSampler = new NoiseHitSamplerBuilder(samplerConfigurationFactory, "NH Hihat Closed")
-            //    .WithGlobalVolume(32)
-            //    .WithDecay(0.12f)
-            //    .WithFilterL(0.15f)
-            //    .WithFilterH(0.149f)
-            //    .Build();
+            //var guitarSampler = samplerFactory.Get(SamplerType.Guitar);
+            //var bassSampler = samplerFactory.Get(SamplerType.Bass);
+            //var kickSampler = samplerFactory.Get(SamplerType.Kick);
+            //var hiHatClosedSampler = samplerFactory.Get(SamplerType.HiHatClosed);
+            //var hiHatOpenSampler = samplerFactory.Get(SamplerType.HiHatOpen);
+            //var snareSampler = samplerFactory.Get(SamplerType.Snare);
 
             //Console.Write("Generating Patterns");
             //var random = new Random();

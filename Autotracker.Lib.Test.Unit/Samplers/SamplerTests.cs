@@ -23,8 +23,8 @@ namespace Autotracker.Test
             var guitar = _samplerFactory.GetByKey(SamplerType.Guitar);
             var guitar2 = _samplerFactory.GetByKey(SamplerType.Guitar);
 
-            Assert.IsTrue(guitar == guitar2);
-            Assert.IsTrue(guitar.Equals(guitar2));
+            Assert.IsFalse(guitar == guitar2);
+            Assert.IsFalse(guitar.Equals(guitar2));
             Assert.IsFalse(ReferenceEquals(guitar,guitar2));
         }
 

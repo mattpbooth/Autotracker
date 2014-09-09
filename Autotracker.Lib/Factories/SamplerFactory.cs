@@ -48,6 +48,54 @@ namespace Autotracker.Lib
                     .WithName("Kick")
                     .Build()
             );
+            _samplerRegistry.Add
+            (
+                SamplerType.Bass,
+                new KarplusStrongSynthSampler.KarplusStrongSynthSamplerBuilder()
+                    .WithDecay(0.005f)
+                    .WithFrequencyMultiply(0.5f)
+                    .WithFilter0(0.2f)
+                    .WithFilterN(0.2f)
+                    .WithFilterF(0.005f)
+                    .WithFilterDC(0.01f)
+                    .WithLengthInSeconds(0.7f)
+                    .WithName("KS Bass")
+                    .WithFrequency(Definitions._middleC / 4.0f)
+                    .Build()
+            );
+            _samplerRegistry.Add
+            (
+                SamplerType.HiHatClosed,
+                new NoiseHitSampler.NoiseHitSamplerBuilder()
+                    .WithDecay(0.03f)
+                    .WithFilterL(0.99f)
+                    .WithFilterH(0.2f)
+                    .WithName("NH Hihat Closed")
+                    .WithGlobalVolume(32)
+                    .Build()
+            );
+            _samplerRegistry.Add
+            (
+                SamplerType.HiHatOpen,
+                new NoiseHitSampler.NoiseHitSamplerBuilder()
+                    .WithDecay(0.5f)
+                    .WithFilterL(0.99f)
+                    .WithFilterH(0.2f)
+                    .WithName("NH Hihat Open")
+                    .WithGlobalVolume(32)
+                    .Build()
+            );
+            _samplerRegistry.Add
+            (
+                SamplerType.Snare,
+                new NoiseHitSampler.NoiseHitSamplerBuilder()
+                    .WithDecay(0.12f)
+                    .WithFilterL(0.15f)
+                    .WithFilterH(0.149f)
+                    .WithName("NH Snare")
+                    .WithGlobalVolume(32)
+                    .Build()
+            );
         }
 
         public Sampler GetByKey(SamplerType key)

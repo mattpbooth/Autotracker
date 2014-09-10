@@ -9,11 +9,18 @@ namespace Autotracker.Lib
 {
     public class DrumsGenerator : Generator
     {
-        public Sampler Kick { get; set; }
-        public Sampler Snare { get; set; }
-        public Sampler HiHatClosed { get; set; }
-        public Sampler HiHatOpen { get; set; }
+        public ISampler Kick { get; internal set; }
+        public ISampler Snare { get; internal set; }
+        public ISampler HiHatClosed { get; internal set; }
+        public ISampler HiHatOpen { get; internal set; }
 
+        public DrumsGenerator(ISampler kickSampler, ISampler snareSampler, ISampler hiHatClosedSampler, ISampler hiHatOpenSampler)
+        {
+            Kick = kickSampler;
+            Snare = snareSampler;
+            HiHatClosed = hiHatClosedSampler;
+            HiHatOpen = hiHatOpenSampler;
+        }
         public override void ApplyNotes(IPattern pattern, IStrategy strategy)
         {
 

@@ -15,7 +15,14 @@ namespace Autotracker.Lib.Test.Unit
         [TestInitialize]
         public void Setup()
         {
-            _generatorFactory = new GeneratorFactory();
+            _generatorFactory = new GeneratorFactory.Builder()
+                .WithGuitarSampler(new StubISampler())
+                .WithBassSampler(new StubISampler())
+                .WithKickSampler(new StubISampler())
+                .WithSnareSampler(new StubISampler())
+                .WithHiHatClosedSampler(new StubISampler())
+                .WithHiHatOpenSampler(new StubISampler())
+                .Build();
         }
 
         [TestMethod]

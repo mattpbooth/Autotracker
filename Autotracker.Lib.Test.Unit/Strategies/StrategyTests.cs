@@ -15,7 +15,6 @@ namespace Autotracker.Lib.Test.Unit
         [TestInitialize]
         public void Setup()
         {
-            // Might get a DI framework for this... Unity?
             _strategyFactory = new StrategyFactory
             {
                  _majorKey = new StubIKey(),

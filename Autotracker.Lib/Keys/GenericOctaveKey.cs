@@ -13,7 +13,8 @@ namespace Autotracker.Lib
 
         public bool HasNote(int Note)
         {
-            return GetKeyMaskImpl()[(Note - BaseNote) % Definitions._notesInOctave];
+            var index = Math.Max(0, (Note - BaseNote));
+            return GetKeyMaskImpl()[index % Definitions._notesInOctave];
         }
 
         protected abstract bool[] GetKeyMaskImpl();

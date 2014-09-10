@@ -8,7 +8,13 @@ namespace Autotracker.Lib
 {
     public class MajorKey : GenericOctaveKey
     {
-        private readonly bool[] _keyMask = { true, false, false, true, false, true, false, true, false, false, true, false };
+        private readonly bool[] _keyMask = { true, false, 
+                                             true, false,
+                                             true,
+                                             true, false,
+                                             true, false,
+                                             true, false,
+                                             true };
 
         protected override bool[] GetKeyMaskImpl()
         {

@@ -124,11 +124,17 @@
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.#ctor">
             <summary>Initializes a new instance of type StubIRandom</summary>
         </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.ali::Autotracker#Lib#Interfaces#IRandom{T}#Choice(System.Collections.Generic.IEnumerable{`0})">
+            <summary>Sets the stub of IRandom`1.Choice(IEnumerable`1&lt;!0&gt; choices)</summary>
+        </member>
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.ali::Autotracker#Lib#Interfaces#IRandom{T}#GetNext">
             <summary>Sets the stub of IRandom`1.GetNext()</summary>
         </member>
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.ali::Autotracker#Lib#Interfaces#IRandom{T}#GetNextRange(`0,`0)">
             <summary>Sets the stub of IRandom`1.GetNextRange(!0 min, !0 max)</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.ChoiceIEnumerableOfT0">
+            <summary>Sets the stub of IRandom`1.Choice(IEnumerable`1&lt;!0&gt; choices)</summary>
         </member>
         <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.GetNext">
             <summary>Sets the stub of IRandom`1.GetNext()</summary>

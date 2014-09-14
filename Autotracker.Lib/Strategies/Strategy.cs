@@ -95,30 +95,7 @@ namespace Autotracker.Lib
             }
         }
 
-        public void NewSequence()
-        {
-        //    self.kseq = random.choice({
-        //    Key_Minor: [
-        //        [(0,Key_Minor),(-4,Key_Major),(5,Key_Major),(-2,Key_Major)],
-        //        [(0,Key_Minor),(-2,Key_Major),(-4,Key_Major),(-5,Key_Minor)],
-        //    ],
-        //    Key_Major: [
-        //        [(0,Key_Major),(-5,Key_Major),(-3,Key_Minor),(5,Key_Major)],
-        //        [(0,Key_Major),(0,Key_Major),(-7,Key_Minor),(-5,Key_Major)],
-        //    ],
-        //}[self.keytype])
-
-        //self.kseq2 = random.choice({
-        //    Key_Minor: [
-        //        [(3,Key_Major),(0,Key_Minor),(-4,Key_Major),(-2,Key_Major)],
-        //        [(-4,Key_Major),(-2,Key_Major),(0,Key_Minor),(-2,Key_Major)],
-        //    ],
-        //    Key_Major: [
-        //        [(2,Key_Minor),(0,Key_Major),(-3,Key_Minor),(0,Key_Major)],
-        //        [(-3,Key_Minor),(-5,Key_Major),(-7,Key_Major),(-5,Key_Major)],
-        //    ],
-        //}[self.keytype])
-        }
+        
         public bool GeneratePattern(IPattern pattern)
         {
             if(Generators.Count > 0)

@@ -10,5 +10,10 @@ namespace Autotracker.Lib.Interfaces
     {
         T GetNext();
         T GetNextRange(T min, T max);
+
+        /// <summary>
+        /// Emulates the Python 'random.choice' functionality.
+        /// </summary>
+        T Choice(IEnumerable<T> choices);
     }
 }

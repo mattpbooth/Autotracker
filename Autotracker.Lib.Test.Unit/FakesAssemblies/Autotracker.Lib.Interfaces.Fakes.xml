@@ -73,8 +73,14 @@
         <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIKey.HasNoteInt32">
             <summary>Sets the stub of IKey.HasNote(Int32 Note)</summary>
         </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIKey.KeyTypeGet">
+            <summary>Sets the stub of IKey.get_KeyType()</summary>
+        </member>
         <member name="P:Autotracker.Lib.Interfaces.Fakes.StubIKey.ali::Autotracker#Lib#Interfaces#IKey#BaseNote">
             <summary>Sets the stub of IKey.get_BaseNote()</summary>
+        </member>
+        <member name="P:Autotracker.Lib.Interfaces.Fakes.StubIKey.ali::Autotracker#Lib#Interfaces#IKey#KeyType">
+            <summary>Sets the stub of IKey.get_KeyType()</summary>
         </member>
         <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIPattern">
             <summary>Stub type of Autotracker.Lib.Interfaces.IPattern</summary>
@@ -124,8 +130,8 @@
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.#ctor">
             <summary>Initializes a new instance of type StubIRandom</summary>
         </member>
-        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.ali::Autotracker#Lib#Interfaces#IRandom{T}#Choice(System.Collections.Generic.IEnumerable{`0})">
-            <summary>Sets the stub of IRandom`1.Choice(IEnumerable`1&lt;!0&gt; choices)</summary>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.ali::Autotracker#Lib#Interfaces#IRandom{T}#Choice``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>Sets the stub of IRandom`1.Choice(IEnumerable`1&lt;!!0&gt; choices)</summary>
         </member>
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.ali::Autotracker#Lib#Interfaces#IRandom{T}#GetNext">
             <summary>Sets the stub of IRandom`1.GetNext()</summary>
@@ -133,13 +139,61 @@
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.ali::Autotracker#Lib#Interfaces#IRandom{T}#GetNextRange(`0,`0)">
             <summary>Sets the stub of IRandom`1.GetNextRange(!0 min, !0 max)</summary>
         </member>
-        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.ChoiceIEnumerableOfT0">
-            <summary>Sets the stub of IRandom`1.Choice(IEnumerable`1&lt;!0&gt; choices)</summary>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.ChoiceOf1IEnumerableOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{``0},``0})">
+            <summary>Sets stubs of Choice(IEnumerable`1&lt;!!0&gt; choices)</summary>
         </member>
         <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.GetNext">
             <summary>Sets the stub of IRandom`1.GetNext()</summary>
         </member>
         <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRandom`1.GetNextRangeT0T0">
+            <summary>Sets the stub of IRandom`1.GetNextRange(!0 min, !0 max)</summary>
+        </member>
+        <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIRandomDouble">
+            <summary>Stub type of Autotracker.Lib.Interfaces.IRandomDouble</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandomDouble.#ctor">
+            <summary>Initializes a new instance of type StubIRandomDouble</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandomDouble.ali::Autotracker#Lib#Interfaces#IRandom{System#Double}#Choice``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>Sets the stub of IRandom`1.Choice(IEnumerable`1&lt;!!0&gt; choices)</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandomDouble.ali::Autotracker#Lib#Interfaces#IRandom{System#Double}#GetNext">
+            <summary>Sets the stub of IRandom`1.GetNext()</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandomDouble.ali::Autotracker#Lib#Interfaces#IRandom{System#Double}#GetNextRange(System.Double,System.Double)">
+            <summary>Sets the stub of IRandom`1.GetNextRange(!0 min, !0 max)</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandomDouble.ChoiceOf1IEnumerableOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{``0},``0})">
+            <summary>Sets stubs of Choice(IEnumerable`1&lt;!!0&gt; choices)</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRandomDouble.GetNext">
+            <summary>Sets the stub of IRandom`1.GetNext()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRandomDouble.GetNextRangeDoubleDouble">
+            <summary>Sets the stub of IRandom`1.GetNextRange(!0 min, !0 max)</summary>
+        </member>
+        <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIRandomInt">
+            <summary>Stub type of Autotracker.Lib.Interfaces.IRandomInt</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandomInt.#ctor">
+            <summary>Initializes a new instance of type StubIRandomInt</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandomInt.ali::Autotracker#Lib#Interfaces#IRandom{System#Int32}#Choice``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>Sets the stub of IRandom`1.Choice(IEnumerable`1&lt;!!0&gt; choices)</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandomInt.ali::Autotracker#Lib#Interfaces#IRandom{System#Int32}#GetNext">
+            <summary>Sets the stub of IRandom`1.GetNext()</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandomInt.ali::Autotracker#Lib#Interfaces#IRandom{System#Int32}#GetNextRange(System.Int32,System.Int32)">
+            <summary>Sets the stub of IRandom`1.GetNextRange(!0 min, !0 max)</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRandomInt.ChoiceOf1IEnumerableOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{``0},``0})">
+            <summary>Sets stubs of Choice(IEnumerable`1&lt;!!0&gt; choices)</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRandomInt.GetNext">
+            <summary>Sets the stub of IRandom`1.GetNext()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRandomInt.GetNextRangeInt32Int32">
             <summary>Sets the stub of IRandom`1.GetNextRange(!0 min, !0 max)</summary>
         </member>
         <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIRegistryFactory`2">
@@ -148,8 +202,14 @@
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRegistryFactory`2.#ctor">
             <summary>Initializes a new instance of type StubIRegistryFactory</summary>
         </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRegistryFactory`2.ali::Autotracker#Lib#Interfaces#IRegistryFactory{T@U}#GetAll">
+            <summary>Sets the stub of IRegistryFactory`2.GetAll()</summary>
+        </member>
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIRegistryFactory`2.ali::Autotracker#Lib#Interfaces#IRegistryFactory{T@U}#GetByKey(`1)">
             <summary>Sets the stub of IRegistryFactory`2.GetByKey(!1 key)</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRegistryFactory`2.GetAll">
+            <summary>Sets the stub of IRegistryFactory`2.GetAll()</summary>
         </member>
         <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIRegistryFactory`2.GetByKeyT1">
             <summary>Sets the stub of IRegistryFactory`2.GetByKey(!1 key)</summary>
@@ -172,17 +232,11 @@
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.#ctor">
             <summary>Initializes a new instance of type StubIStrategy</summary>
         </member>
-        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.AddGeneratorIGenerator">
-            <summary>Sets the stub of IStrategy.AddGenerator(IGenerator generator)</summary>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.ali::Autotracker#Lib#Interfaces#IStrategy#GeneratePattern(System.Collections.Generic.IEnumerable{Autotracker.Lib.Interfaces.IGenerator},Autotracker.Lib.Interfaces.IPattern)">
+            <summary>Sets the stub of IStrategy.GeneratePattern(IEnumerable`1&lt;IGenerator&gt; generators, IPattern pattern)</summary>
         </member>
-        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.ali::Autotracker#Lib#Interfaces#IStrategy#AddGenerator(Autotracker.Lib.Interfaces.IGenerator)">
-            <summary>Sets the stub of IStrategy.AddGenerator(IGenerator generator)</summary>
-        </member>
-        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.ali::Autotracker#Lib#Interfaces#IStrategy#GeneratePattern(Autotracker.Lib.Interfaces.IPattern)">
-            <summary>Sets the stub of IStrategy.GeneratePattern(IPattern pattern)</summary>
-        </member>
-        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.GeneratePatternIPattern">
-            <summary>Sets the stub of IStrategy.GeneratePattern(IPattern pattern)</summary>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.GeneratePatternIEnumerableOfIGeneratorIPattern">
+            <summary>Sets the stub of IStrategy.GeneratePattern(IEnumerable`1&lt;IGenerator&gt; generators, IPattern pattern)</summary>
         </member>
         <member name="T:Autotracker.Lib.Interfaces.Fakes.StubITracker">
             <summary>Stub type of Autotracker.Lib.Interfaces.ITracker</summary>
@@ -190,11 +244,11 @@
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubITracker.#ctor">
             <summary>Initializes a new instance of type StubITracker</summary>
         </member>
-        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubITracker.ali::Autotracker#Lib#Interfaces#ITracker#Save">
-            <summary>Sets the stub of ITracker.Save()</summary>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubITracker.ali::Autotracker#Lib#Interfaces#ITracker#Generate">
+            <summary>Sets the stub of ITracker.Generate()</summary>
         </member>
-        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubITracker.Save">
-            <summary>Sets the stub of ITracker.Save()</summary>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubITracker.Generate">
+            <summary>Sets the stub of ITracker.Generate()</summary>
         </member>
     </members>
 </doc>

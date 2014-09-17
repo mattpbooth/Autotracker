@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib.Interfaces
 {
-    public interface IRegistryFactory<T, U> where T: IPrototype<T>
+    public interface IRegistryFactory<T, U>
     {
         T GetByKey(U key);
+        IEnumerable<T> GetAll();
     }
 }

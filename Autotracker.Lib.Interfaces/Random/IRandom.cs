@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib.Interfaces
 {
-    public interface IRandom<T>// where T: struct
+    public interface IRandomInt : IRandom<int>
+    {
+    }
+
+    public interface IRandomDouble : IRandom<double>
+    {
+    }
+
+    public interface IRandom<T>
     {
         T GetNext();
         T GetNextRange(T min, T max);
@@ -14,6 +22,6 @@ namespace Autotracker.Lib.Interfaces
         /// <summary>
         /// Emulates the Python 'random.choice' functionality.
         /// </summary>
-        T Choice(IEnumerable<T> choices);
+        U Choice<U>(IEnumerable<U> choices);
     }
 }

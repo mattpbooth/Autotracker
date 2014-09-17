@@ -14,84 +14,19 @@ namespace Autotracker.Lib
         Drums
     };
 
-    public class GeneratorFactory : IRegistryFactory<Generator, GeneratorType>
+    public class GeneratorFactory : PrototypeRegistryFactory<Generator, GeneratorType>
     {
-        private Dictionary<GeneratorType, Generator> _generatorRegistry = new Dictionary<GeneratorType, Generator>();
-
-        private GeneratorFactory(ISampler guitarSampler, ISampler bassSampler, ISampler kickSampler, ISampler snareSampler, ISampler hiHatOpenSampler, ISampler hiHatClosedSampler)
+        public GeneratorFactory(IRegistryFactory<ISampler, SamplerType> samplerFactory)
         {
-            _generatorRegistry.Add(GeneratorType.AmbientMelody, new AmbientMelodyGenerator(guitarSampler));
-            _generatorRegistry.Add(GeneratorType.Bass, new BassGenerator(bassSampler));
-            _generatorRegistry.Add(GeneratorType.Drums, new DrumsGenerator(kickSampler, snareSampler, hiHatClosedSampler, hiHatOpenSampler));
-        }
-
-        public class Builder : IBuilder<GeneratorFactory>
-        {
-            private ISampler _guitarSampler;
-            private ISampler _bassSampler;
-            private ISampler _kickSampler;
-            private ISampler _snareSampler;
-            private ISampler _hiHatOpenSampler;
-            private ISampler _hiHatClosedSampler;
-
-            public Builder WithGuitarSampler(ISampler guitarSampler)
-            {
-                _guitarSampler = guitarSampler;
-                return this;
-            }
-
-            public Builder WithBassSampler(ISampler bassSampler)
-            {
-                _bassSampler = bassSampler;
-                return this;
-            }
-
-            public Builder WithKickSampler(ISampler kickSampler)
-            {
-                _kickSampler = kickSampler;
-                return this;
-            }
-
-            public Builder WithSnareSampler(ISampler snareSampler)
-            {
-                _snareSampler = snareSampler;
-                return this;
-            }
-
-            public Builder WithHiHatOpenSampler(ISampler hiHatOpenSampler)
-            {
-                _hiHatOpenSampler = hiHatOpenSampler;
-                return this;
-            }
-
-            public Builder WithHiHatClosedSampler(ISampler hiHatClosedSampler)
-            {
-                _hiHatClosedSampler = hiHatClosedSampler;
-                return this;
-            }
-
-            public GeneratorFactory Build()
-            {
-                return new GeneratorFactory
-                (
-                    _guitarSampler,
-                    _bassSampler,
-                    _kickSampler,
-                    _snareSampler,
-                    _hiHatOpenSampler,
-                    _hiHatClosedSampler
-                );
-            }
-        }
-
-        public Generator GetByKey(GeneratorType key)
-        {
-            Generator generator;
-            if (_generatorRegistry.TryGetValue(key, out generator))
-            {
-                return generator.Clone();
-            }
-            return null;
+            _registry.Add(GeneratorType.AmbientMelody, new AmbientMelodyGenerator(samplerFactory.GetByKey(SamplerType.Guitar)));
+            _registry.Add(GeneratorType.Bass, new BassGenerator(samplerFactory.GetByKey(SamplerType.Bass)));
+            _registry.Add(GeneratorType.Drums, new DrumsGenerator
+            (
+                samplerFactory.GetByKey(SamplerType.Kicker),
+                samplerFactory.GetByKey(SamplerType.Snare),
+                samplerFactory.GetByKey(SamplerType.HiHatClosed),
+                samplerFactory.GetByKey(SamplerType.HiHatOpen)
+            ));
         }
     }
 }

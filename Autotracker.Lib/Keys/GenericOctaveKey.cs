@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib
 {
-    public abstract class GenericOctaveKey : IKey
+    public abstract class GenericOctaveKey : IKey, IPrototype<GenericOctaveKey>
     {
+        public abstract KeyType KeyType { get; }
+
         public int BaseNote { get; set; }
 
         public bool HasNote(int Note)
@@ -16,6 +18,8 @@ namespace Autotracker.Lib
             var index = Math.Max(0, (Note - BaseNote));
             return GetKeyMaskImpl()[index % Definitions._notesInOctave];
         }
+
+        public abstract GenericOctaveKey Clone();
 
         protected abstract bool[] GetKeyMaskImpl();
     }

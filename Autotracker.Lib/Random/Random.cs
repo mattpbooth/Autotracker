@@ -6,11 +6,11 @@ using SysRandom = System.Random;
 
 namespace Autotracker.Lib
 {
-    public class RandomInt : IRandom<int>
+    public class RandomInt : IRandomInt
     {
         private SysRandom _random = new SysRandom();
 
-        public int Choice(IEnumerable<int> choices)
+        public T Choice<T>(IEnumerable<T> choices)
         {
             return choices.ElementAt(_random.Next(0, choices.Count()));
         }
@@ -26,11 +26,11 @@ namespace Autotracker.Lib
         }
     }
 
-    public class RandomDouble : IRandom<double>
+    public class RandomDouble : IRandomDouble
     {
         private SysRandom _random = new SysRandom();
 
-        public double Choice(IEnumerable<double> choices)
+        public T Choice<T>(IEnumerable<T> choices)
         {
             return choices.ElementAt(_random.Next(0, choices.Count()));
         }

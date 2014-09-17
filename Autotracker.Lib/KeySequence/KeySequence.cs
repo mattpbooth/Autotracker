@@ -9,13 +9,19 @@ namespace Autotracker.Lib
 {
     
 
-    public struct KeySequence
+    public class KeySequence
     {
         public int Note{get;set;}
-        public IKey Key{get;set;}
+        public KeyType KeyType { get; set; }
     }
-    public struct KeySequenceVariant
+
+    public class KeySequenceVariant : IPrototype<KeySequenceVariant>
     {
         public KeySequence[] KeySequences{get;set;}
+
+        public KeySequenceVariant Clone()
+        {
+            return (KeySequenceVariant)this.MemberwiseClone();
+        }
     }
 }

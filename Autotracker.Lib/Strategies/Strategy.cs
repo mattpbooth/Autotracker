@@ -7,29 +7,33 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib
 {
+    /// <summary>
+    /// The 'auto' in auto tracker.
+    /// Composition strategy, uses the generators, base pattern and musical theory to generate harmonic patterns for tracker data.
+    /// </summary>
     public class Strategy : IStrategy
     {
         public int BaseNote { get; internal set; }
         public IKey Key { get; internal set; }
-        public int PatSize { get; internal set; }
+        public int PatternSize { get; internal set; }
         public int BlockSize { get; internal set; }
         public float RhythmSpeed { get; internal set; }
         public float Rhythm { get; internal set; }
-        public int PatId { get; internal set; }
-        public List<IGenerator> Generators { get; internal set; }
+        public int PatternId { get; internal set; }
 
-        public bool[] Pats { get; set; }
+        // TODO: DI
+        public IRegistryFactory<KeySequenceVariant, KeyType> KeySequenceFactory { get; internal set; }
 
         public class Builder : IBuilder<Strategy>
         {
             private int _baseNote;
             private IKey _key;
-            private int _patSize;
+            private int _patternSize;
             private int _blockSize;
-            private bool[] _pats;
-            private int _patId;
+            private int _patternId;
             private float _rhythmSpeed;
             private float _rhythm;
+            private IRegistryFactory<KeySequenceVariant, KeyType> _keySequenceFactory;
 
             public Builder WithBaseNote(int baseNote)
             {
@@ -43,9 +47,9 @@ namespace Autotracker.Lib
                 return this;
             }
 
-            public Builder WithPatSize(int patSize)
+            public Builder WithPatternSize(int patSize)
             {
-                _patSize = patSize;
+                _patternSize = patSize;
                 return this;
             }
 
@@ -55,15 +59,9 @@ namespace Autotracker.Lib
                 return this;
             }
 
-            public Builder WithPats(bool[] pats)
+            public Builder WithPatternId(int patId)
             {
-                _pats = pats;
-                return this;
-            }
-
-            public Builder WithPatId(int patId)
-            {
-                _patId = patId;
+                _patternId = patId;
                 return this;
             }
 
@@ -79,6 +77,12 @@ namespace Autotracker.Lib
                 return this;
             }
 
+            public Builder WithKeySequenceFactory(IRegistryFactory<KeySequenceVariant, KeyType> keySequenceFactory)
+            {
+                _keySequenceFactory = keySequenceFactory;
+                return this;
+            }
+
             public Strategy Build()
             {
                 return new Strategy
@@ -86,29 +90,47 @@ namespace Autotracker.Lib
                     BaseNote = _baseNote,
                     Key = _key,
                     BlockSize = _blockSize,
-                    PatId = _patId,
-                    Pats = _pats,
+                    PatternId = _patternId,
                     Rhythm = _rhythm,
                     RhythmSpeed = _rhythmSpeed,
-                    Generators = new List<IGenerator>()
+                    KeySequenceFactory = _keySequenceFactory
                 };
             }
         }
-
         
-        public bool GeneratePattern(IPattern pattern)
+        public bool GeneratePattern(IEnumerable<IGenerator> generators, IPattern pattern)
         {
-            if(Generators.Count > 0)
+            if (generators.Count() <= 0)
             {
-                return true;
+                return false;
             }
-            return false;
-        }
 
-        public int AddGenerator(IGenerator generator)
-        {
-            Generators.Add(generator);
-            return Generators.Count;
+            //for (int i = 0; i <= iterations; ++i)
+            //{
+            //    var sequenceVarient = _keySequenceFactory.Get(Key.KeyType);               
+
+            //    // TODO: Enforce the pattern, block size relationship.
+            //    //for(int j = 0; j <= PatternSize; j += BlockSize)
+            //    //{
+            //      //  var keySequence = sequenceVarient[j / BlockSize];
+            //        //k,kt = kseq.pop(0)
+            //        //kchord = kt(self.basenote+k)
+            //        //for chn,gen in self.gens:
+            //        //    gen.apply_notes(chn, pat, self, self.rhythm, i, self.blocksize, self.key, kchord)
+
+            //        //kseq.append(k)
+            //    //}
+                    
+
+            //    //self.pats.append(pat)
+            //    //Patterns.Add(pattern);
+
+
+            //    //self.pat_idx += 1
+
+            //    //return pat
+            //}
+            return true;
         }
     }
 }

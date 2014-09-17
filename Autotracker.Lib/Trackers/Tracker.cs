@@ -7,24 +7,26 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib
 {
-    public abstract class Tracker : ITracker
+    /// <summary>
+    /// Orchestrator for generation of tracker data.
+    /// Tracker-specific implementations to be derived.
+    /// </summary>
+    public class Tracker : ITracker
     {
-        public List<Sampler> Samplers { get; set; }
-        public string Name { get; set; }
+        IStrategy _strategy;
+        IEnumerable<IGenerator> _generators;
+        IFactory<IPattern> _patternFactory;
 
-        private struct PatternPlaylistEntry
+        public Tracker(IStrategy strategy, IFactory<IPattern> patternFactory, IRegistryFactory<IGenerator, GeneratorType> generatorFactory)
         {
-            public Pattern Pattern { get; set; }
-            public int Order { get; set; }
+            _strategy = strategy;
+            _generators = generatorFactory.GetAll();
+            _patternFactory = patternFactory;
         }
 
-        private List<PatternPlaylistEntry> _patternPlayList = new List<PatternPlaylistEntry>();
-
-        public void AddPattern(Strategy strategy)
+        public virtual void Generate()
         {
-          //  _patternPlayList.Add(new PatternPlaylistEntry { Pattern = strategy.GetPattern(), Order = _patternPlayList.Count });
+            _strategy.GeneratePattern(_generators, _patternFactory.Get());
         }
-
-        public abstract void Save();
     }
 }

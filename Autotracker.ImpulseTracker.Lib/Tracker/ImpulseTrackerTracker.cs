@@ -1,4 +1,5 @@
 ﻿using Autotracker.Lib;
+using Autotracker.Lib.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,24 @@ using System.Threading.Tasks;
 
 namespace Autotracker.ImpulseTracker.Lib
 {
-    // http://www.users.on.net/~jtlim/ImpulseTracker/
-    public class ImpulseTrackerTracker : Tracker
+    /// <summary>
+    /// Tracker concrete type - ImpulseTracker.
+    /// http://www.users.on.net/~jtlim/ImpulseTracker/ 
+    /// </summary>
+    public class ImpulseTrackerTracker : ITracker
     {
-        public override void Save()
-        {
+        ITracker _trackerDecoratee;
 
+        public ImpulseTrackerTracker(ITracker trackerDecoratee)
+        {
+            _trackerDecoratee = trackerDecoratee;
+        }
+
+        public void Generate()
+        {
+            _trackerDecoratee.Generate();
+             
+            // TODO: Tracker Generation Wizardry
         }
     }
 }

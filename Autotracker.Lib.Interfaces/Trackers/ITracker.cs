@@ -8,6 +8,6 @@ namespace Autotracker.Lib.Interfaces
 {
     public interface ITracker
     {
-        void Save();
+        void Generate();
     }
 }

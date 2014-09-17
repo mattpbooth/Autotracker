@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib
 {
+    /// <summary>
+    /// Uses sample and pattern to generates notes.
+    /// </summary>
     public abstract class Generator : IGenerator, IPrototype<Generator>
     {
         public int Size { get; set; }

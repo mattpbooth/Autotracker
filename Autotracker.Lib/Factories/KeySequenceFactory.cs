@@ -5,40 +5,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Autotracker.Lib.Factories
+namespace Autotracker.Lib
 {
-    public class KeySequenceFactory : IFactory<Dictionary<IKey, List<KeySequenceVariant>>>
+    public class KeySequenceFactory : IRegistryFactory<KeySequenceVariant, KeyType>
     {
-        const int _sequencesPerVarient = 4;
-        Dictionary<IKey, List<KeySequenceVariant>> _keySequences = new Dictionary<IKey, List<KeySequenceVariant>>();
+        Dictionary<KeyType, IEnumerable<KeySequenceVariant>> _registry = new Dictionary<KeyType, IEnumerable<KeySequenceVariant>>();
 
-        public KeySequenceFactory(IKey majorKey, IKey minorKey)
+        // 4 seems to be the relationship between block size and pattern size (e.g. 128/32 = 4)
+        // TODO: Remove this dependency.
+        const int _sequencesPerVarient = 4;
+
+        IRandomInt _random;
+
+        public KeySequenceFactory(IRandomInt random)
         {
+            _random = random;
+
             // This should be data driven as soon as concept is proven.
             var majorSequenceVarients = new List<KeySequenceVariant>();
             var majorSequence1 = new KeySequence[_sequencesPerVarient];
-            majorSequence1[0] = new KeySequence { Note = 0, Key = majorKey };
-            majorSequence1[1] = new KeySequence { Note = -5, Key = majorKey };
-            majorSequence1[2] = new KeySequence { Note = -3, Key = minorKey };
-            majorSequence1[3] = new KeySequence { Note = 5, Key = majorKey };
+            majorSequence1[0] = new KeySequence { Note = 0, KeyType = KeyType.Major };
+            majorSequence1[1] = new KeySequence { Note = -5, KeyType = KeyType.Major };
+            majorSequence1[2] = new KeySequence { Note = -3, KeyType = KeyType.Minor };
+            majorSequence1[3] = new KeySequence { Note = 5, KeyType = KeyType.Major };
 
             var majorSequence2 = new KeySequence[_sequencesPerVarient];
-            majorSequence2[0] = new KeySequence { Note = 0, Key = majorKey };
-            majorSequence2[1] = new KeySequence { Note = 0, Key = majorKey };
-            majorSequence2[2] = new KeySequence { Note = -7,Key = minorKey };
-            majorSequence2[3] = new KeySequence { Note = -5, Key = majorKey };
+            majorSequence2[0] = new KeySequence { Note = 0, KeyType = KeyType.Major };
+            majorSequence2[1] = new KeySequence { Note = 0, KeyType = KeyType.Major };
+            majorSequence2[2] = new KeySequence { Note = -7,KeyType = KeyType.Minor };
+            majorSequence2[3] = new KeySequence { Note = -5, KeyType = KeyType.Major };
 
             var minorSequence1 = new KeySequence[_sequencesPerVarient];
-            minorSequence1[0] = new KeySequence { Note = 0, Key = minorKey };
-            minorSequence1[1] = new KeySequence { Note = -4, Key = majorKey };
-            minorSequence1[2] = new KeySequence { Note = 5, Key = majorKey };
-            minorSequence1[3] = new KeySequence { Note = -2, Key = majorKey };
+            minorSequence1[0] = new KeySequence { Note = 0, KeyType = KeyType.Minor };
+            minorSequence1[1] = new KeySequence { Note = -4, KeyType = KeyType.Major };
+            minorSequence1[2] = new KeySequence { Note = 5, KeyType = KeyType.Major };
+            minorSequence1[3] = new KeySequence { Note = -2, KeyType = KeyType.Major };
 
             var minorSequence2 = new KeySequence[_sequencesPerVarient];
-            minorSequence2[0] = new KeySequence { Note = 0, Key = minorKey };
-            minorSequence2[1] = new KeySequence { Note = -2, Key = majorKey };
-            minorSequence2[2] = new KeySequence { Note = -4, Key = majorKey };
-            minorSequence2[3] = new KeySequence { Note = -5, Key = minorKey };
+            minorSequence2[0] = new KeySequence { Note = 0, KeyType = KeyType.Minor };
+            minorSequence2[1] = new KeySequence { Note = -2, KeyType = KeyType.Major };
+            minorSequence2[2] = new KeySequence { Note = -4, KeyType = KeyType.Major };
+            minorSequence2[3] = new KeySequence { Note = -5, KeyType = KeyType.Minor };
            
             var majorSequenceVariants = new List<KeySequenceVariant>();
             var minorSequenceVariants = new List<KeySequenceVariant>();
@@ -48,13 +55,20 @@ namespace Autotracker.Lib.Factories
             minorSequenceVariants.Add( new KeySequenceVariant{ KeySequences = minorSequence1 });
             minorSequenceVariants.Add( new KeySequenceVariant{ KeySequences = minorSequence2 });
             
-            _keySequences.Add(majorKey, majorSequenceVariants);
-            _keySequences.Add(minorKey, minorSequenceVariants);
+            _registry.Add(KeyType.Major, majorSequenceVariants);
+            _registry.Add(KeyType.Minor, minorSequenceVariants);
         }
 
-        public Dictionary<IKey, List<KeySequenceVariant>> Get()
+        public KeySequenceVariant GetByKey(KeyType keyType)
         {
-            return _keySequences;
+            var keySequence = _registry[keyType];
+            var choice = _random.Choice(keySequence);
+            return choice;
+        }
+
+        public IEnumerable<KeySequenceVariant> GetAll()
+        {
+            return _registry.SelectMany(x => x.Value);
         }
     }
 }

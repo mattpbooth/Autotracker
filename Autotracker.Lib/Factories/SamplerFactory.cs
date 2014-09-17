@@ -18,15 +18,13 @@ namespace Autotracker.Lib
         Snare
     }
 
-    public class SamplerFactory : IRegistryFactory<Sampler, SamplerType>
+    public class SamplerFactory : PrototypeRegistryFactory<Sampler, SamplerType>
     {
-        private Dictionary<SamplerType, Sampler> _samplerRegistry = new Dictionary<SamplerType, Sampler>();
-        
         public SamplerFactory()
         {
             // TODO: Need to handle the base prototype values also...
-            // TODO: Not nice hardcoding this, move to a repository.
-            _samplerRegistry.Add
+            // TODO: Not nice hardcoding this, move to a repository...
+            _registry.Add
             (
                 SamplerType.Guitar,
                 new KarplusStrongSynthSampler.KarplusStrongSynthSamplerBuilder()
@@ -41,14 +39,14 @@ namespace Autotracker.Lib
                     .WithFrequency(Definitions._middleC)
                     .Build()
             );
-            _samplerRegistry.Add
+            _registry.Add
             (
                 SamplerType.Kicker,
                 new KickerSampler.KickerSamplerBuilder()
                     .WithName("Kick")
                     .Build()
             );
-            _samplerRegistry.Add
+            _registry.Add
             (
                 SamplerType.Bass,
                 new KarplusStrongSynthSampler.KarplusStrongSynthSamplerBuilder()
@@ -63,7 +61,7 @@ namespace Autotracker.Lib
                     .WithFrequency(Definitions._middleC / 4.0f)
                     .Build()
             );
-            _samplerRegistry.Add
+            _registry.Add
             (
                 SamplerType.HiHatClosed,
                 new NoiseHitSampler.NoiseHitSamplerBuilder()
@@ -74,7 +72,7 @@ namespace Autotracker.Lib
                     .WithGlobalVolume(32)
                     .Build()
             );
-            _samplerRegistry.Add
+            _registry.Add
             (
                 SamplerType.HiHatOpen,
                 new NoiseHitSampler.NoiseHitSamplerBuilder()
@@ -85,7 +83,7 @@ namespace Autotracker.Lib
                     .WithGlobalVolume(32)
                     .Build()
             );
-            _samplerRegistry.Add
+            _registry.Add
             (
                 SamplerType.Snare,
                 new NoiseHitSampler.NoiseHitSamplerBuilder()
@@ -96,16 +94,6 @@ namespace Autotracker.Lib
                     .WithGlobalVolume(32)
                     .Build()
             );
-        }
-
-        public Sampler GetByKey(SamplerType key)
-        {
-            Sampler sampler;
-            if (_samplerRegistry.TryGetValue(key, out sampler))
-            {
-                return sampler.Clone();
-            }
-            return null;
         }
     }
 }

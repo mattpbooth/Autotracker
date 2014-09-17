@@ -41,9 +41,13 @@
   <ItemGroup>
     <Compile Include="Definitions.cs" />
     <Compile Include="Factories\GeneratorFactory.cs" />
+    <Compile Include="Factories\KeyFactory.cs" />
+    <Compile Include="Factories\PrototypeRegistryFactory.cs" />
     <Compile Include="Factories\SamplerFactory.cs" />
     <Compile Include="Factories\KeySequenceFactory.cs" />
+    <Compile Include="Factories\PatternFactory.cs" />
     <Compile Include="Factories\StrategyFactory.cs" />
+    <Compile Include="Factories\TrackerFactory.cs" />
     <Compile Include="Generators\AmbientMelodyGenerator.cs" />
     <Compile Include="Generators\BassGenerator.cs" />
     <Compile Include="Generators\DrumsGenerator.cs" />

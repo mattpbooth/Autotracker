@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autotracker.Lib.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Autotracker.Lib
 {
     public class MajorPentatonicKey : GenericOctaveKey
     {
+        public override KeyType KeyType { get { return KeyType.MajorPentatonic; } }
         private readonly bool[] _keyMask = { true, false,
                                              true, false,
                                              true,
@@ -15,6 +17,10 @@ namespace Autotracker.Lib
                                              true, false,
                                              true, false,
                                              false };
+        public override GenericOctaveKey Clone()
+        {
+            return (MajorPentatonicKey)MemberwiseClone();
+        }
 
         protected override bool[] GetKeyMaskImpl()
         {

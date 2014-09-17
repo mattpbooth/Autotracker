@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autotracker.Lib.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Autotracker.Lib
 {
     public class MinorKey : GenericOctaveKey
     {
+        public override KeyType KeyType { get { return KeyType.Minor; } }
         private readonly bool[] _keyMask = { true, false, 
                                              true, 
                                              true, false, 
@@ -15,6 +17,11 @@ namespace Autotracker.Lib
                                              true, 
                                              true, false, 
                                              true, false };
+
+        public override GenericOctaveKey Clone()
+        {
+            return (MinorKey)MemberwiseClone();
+        }
 
         protected override bool[] GetKeyMaskImpl()
         {

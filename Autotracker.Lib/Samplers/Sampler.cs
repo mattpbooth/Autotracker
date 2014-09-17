@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib
 {
+    /// <summary>
+    /// Instruments, or as close as a tracker gets.
+    /// </summary>
     public abstract class Sampler : ISampler, IPrototype<Sampler>
     {
         public string Name { get; internal set; }

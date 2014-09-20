@@ -10,12 +10,12 @@ namespace Autotracker.Lib
     /// <summary>
     /// Uses sample and pattern to generates notes.
     /// </summary>
-    public abstract class Generator : IGenerator, IPrototype<Generator>
+    public abstract class Generator : IGenerator
     {
         public int Size { get; set; }
         public abstract void ApplyNotes(IPattern pattern, IStrategy strategy);
 
-        public abstract Generator Clone();
+        public abstract IGenerator Clone();
 
     }
 }

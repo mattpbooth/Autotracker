@@ -14,7 +14,7 @@ namespace Autotracker.Lib
         Drums
     };
 
-    public class GeneratorFactory : PrototypeRegistryFactory<Generator, GeneratorType>
+    public class GeneratorFactory : PrototypeRegistryFactory<IGenerator, GeneratorType>
     {
         public GeneratorFactory(IRegistryFactory<ISampler, SamplerType> samplerFactory)
         {

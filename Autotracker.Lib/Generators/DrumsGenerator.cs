@@ -26,7 +26,7 @@ namespace Autotracker.Lib
 
         }
 
-        public override Generator Clone()
+        public override IGenerator Clone()
         {
             return (Generator)MemberwiseClone();
         }

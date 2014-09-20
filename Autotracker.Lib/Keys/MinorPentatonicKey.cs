@@ -18,7 +18,7 @@ namespace Autotracker.Lib
                                              false, false,
                                              true, false };
 
-        public override GenericOctaveKey Clone()
+        public override IKey Clone()
         {
             return (MinorPentatonicKey)MemberwiseClone();
         }

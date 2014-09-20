@@ -14,7 +14,7 @@ namespace Autotracker.Lib
             throw new NotImplementedException();
         }
 
-        public override Sampler Clone()
+        public override ISampler Clone()
         {
             return (Sampler)MemberwiseClone();
         }

@@ -18,7 +18,7 @@ namespace Autotracker.Lib
                                              true, false,
                                              true };
 
-        public override GenericOctaveKey Clone()
+        public override IKey Clone()
         {
             return (MajorKey)MemberwiseClone();
         }

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib
 {
-    public class PatternFactory: IFactory<Pattern>
+    public class PatternFactory: IFactory<IPattern>
     {
-        public Pattern Get()
+        public IPattern Get()
         {
             return new Pattern();
         }

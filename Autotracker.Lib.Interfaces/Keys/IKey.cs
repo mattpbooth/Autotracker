@@ -15,7 +15,7 @@ namespace Autotracker.Lib.Interfaces
         MinorPentatonic
     }
 
-    public interface IKey
+    public interface IKey : IPrototype<IKey>
     {
         KeyType KeyType { get; }
         int BaseNote { get; set; }

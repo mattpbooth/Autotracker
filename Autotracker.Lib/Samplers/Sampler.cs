@@ -10,7 +10,7 @@ namespace Autotracker.Lib
     /// <summary>
     /// Instruments, or as close as a tracker gets.
     /// </summary>
-    public abstract class Sampler : ISampler, IPrototype<Sampler>
+    public abstract class Sampler : ISampler
     {
         public string Name { get; internal set; }
         public int Flags { get; internal set; }
@@ -192,7 +192,7 @@ namespace Autotracker.Lib
             return false;
         }
 
-        public abstract Sampler Clone();
+        public abstract ISampler Clone();
 
         public void Amplify()
         {

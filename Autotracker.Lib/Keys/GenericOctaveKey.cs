@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib
 {
-    public abstract class GenericOctaveKey : IKey, IPrototype<GenericOctaveKey>
+    public abstract class GenericOctaveKey : IKey
     {
         public abstract KeyType KeyType { get; }
 
@@ -19,7 +19,7 @@ namespace Autotracker.Lib
             return GetKeyMaskImpl()[index % Definitions._notesInOctave];
         }
 
-        public abstract GenericOctaveKey Clone();
+        public abstract IKey Clone();
 
         protected abstract bool[] GetKeyMaskImpl();
     }

@@ -43,6 +43,12 @@
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.ali::Autotracker#Lib#Interfaces#IGenerator#ApplyNotes(Autotracker.Lib.Interfaces.IPattern,Autotracker.Lib.Interfaces.IStrategy)">
             <summary>Sets the stub of IGenerator.ApplyNotes(IPattern pattern, IStrategy strategy)</summary>
         </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.ali::Autotracker#Lib#Interfaces#IPrototype{Autotracker#Lib#Interfaces#IGenerator}#Clone">
+            <summary>Sets the stub of IPrototype`1.Clone()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.Clone">
+            <summary>Sets the stub of IPrototype`1.Clone()</summary>
+        </member>
         <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.SizeGet">
             <summary>Sets the stub of IGenerator.get_Size()</summary>
         </member>
@@ -64,11 +70,17 @@
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIKey.ali::Autotracker#Lib#Interfaces#IKey#HasNote(System.Int32)">
             <summary>Sets the stub of IKey.HasNote(Int32 Note)</summary>
         </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIKey.ali::Autotracker#Lib#Interfaces#IPrototype{Autotracker#Lib#Interfaces#IKey}#Clone">
+            <summary>Sets the stub of IPrototype`1.Clone()</summary>
+        </member>
         <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIKey.BaseNoteGet">
             <summary>Sets the stub of IKey.get_BaseNote()</summary>
         </member>
         <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIKey.BaseNoteSetInt32">
             <summary>Sets the stub of IKey.set_BaseNote(Int32 value)</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIKey.Clone">
+            <summary>Sets the stub of IPrototype`1.Clone()</summary>
         </member>
         <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIKey.HasNoteInt32">
             <summary>Sets the stub of IKey.HasNote(Int32 Note)</summary>
@@ -220,8 +232,14 @@
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubISampler.#ctor">
             <summary>Initializes a new instance of type StubISampler</summary>
         </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubISampler.ali::Autotracker#Lib#Interfaces#IPrototype{Autotracker#Lib#Interfaces#ISampler}#Clone">
+            <summary>Sets the stub of IPrototype`1.Clone()</summary>
+        </member>
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubISampler.ali::Autotracker#Lib#Interfaces#ISampler#Generate">
             <summary>Sets the stub of ISampler.Generate()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubISampler.Clone">
+            <summary>Sets the stub of IPrototype`1.Clone()</summary>
         </member>
         <member name="F:Autotracker.Lib.Interfaces.Fakes.StubISampler.Generate">
             <summary>Sets the stub of ISampler.Generate()</summary>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib
 {
-    public class KeyFactory : PrototypeRegistryFactory<GenericOctaveKey, KeyType>
+    public class KeyFactory : PrototypeRegistryFactory<IKey, KeyType>
     {
         public KeyFactory()
         {

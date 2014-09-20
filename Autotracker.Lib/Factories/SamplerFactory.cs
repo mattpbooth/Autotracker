@@ -18,7 +18,7 @@ namespace Autotracker.Lib
         Snare
     }
 
-    public class SamplerFactory : PrototypeRegistryFactory<Sampler, SamplerType>
+    public class SamplerFactory : PrototypeRegistryFactory<ISampler, SamplerType>
     {
         public SamplerFactory()
         {

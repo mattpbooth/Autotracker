@@ -9,7 +9,7 @@ namespace Autotracker.Lib.Interfaces
     /// <summary>
     /// Will generate samples consistent with a particular instrument's sound.
     /// </summary>
-    public interface ISampler
+    public interface ISampler : IPrototype<ISampler>
     {
         bool Generate();
     }

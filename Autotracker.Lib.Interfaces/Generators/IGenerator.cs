@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Autotracker.Lib.Interfaces
 {
-    public interface IGenerator
+    public interface IGenerator : IPrototype<IGenerator>
     {
         int Size { get; set; }
         void ApplyNotes(IPattern pattern, IStrategy strategy);

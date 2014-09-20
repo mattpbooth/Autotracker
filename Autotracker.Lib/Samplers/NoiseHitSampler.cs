@@ -74,7 +74,7 @@ namespace Autotracker.Lib
             return list;
         }
 
-        public override Sampler Clone()
+        public override ISampler Clone()
         {
             return (Sampler)MemberwiseClone();
         }

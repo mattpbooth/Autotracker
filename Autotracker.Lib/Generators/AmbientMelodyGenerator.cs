@@ -15,7 +15,7 @@ namespace Autotracker.Lib
 
         }
 
-        public override void ApplyNotes(IPattern pattern, IStrategy strategy)
+        public override void ApplyNotes(IPattern pattern, IStrategy strategy, IKey chord)
         {
 
         }

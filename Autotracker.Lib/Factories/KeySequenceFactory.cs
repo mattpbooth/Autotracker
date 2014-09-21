@@ -23,37 +23,37 @@ namespace Autotracker.Lib
 
             // This should be data driven as soon as concept is proven.
             var majorSequenceVarients = new List<KeySequenceVariant>();
-            var majorSequence1 = new KeySequence[_sequencesPerVarient];
-            majorSequence1[0] = new KeySequence { Note = 0, KeyType = KeyType.Major };
-            majorSequence1[1] = new KeySequence { Note = -5, KeyType = KeyType.Major };
-            majorSequence1[2] = new KeySequence { Note = -3, KeyType = KeyType.Minor };
-            majorSequence1[3] = new KeySequence { Note = 5, KeyType = KeyType.Major };
+            var majorSequence1 = new Stack<KeySequence>(_sequencesPerVarient);
+            majorSequence1.Push( new KeySequence { Note = 0, KeyType = KeyType.Major } );
+            majorSequence1.Push( new KeySequence { Note = -5, KeyType = KeyType.Major } );
+            majorSequence1.Push( new KeySequence { Note = -3, KeyType = KeyType.Minor } );
+            majorSequence1.Push( new KeySequence { Note = 5, KeyType = KeyType.Major } );
 
-            var majorSequence2 = new KeySequence[_sequencesPerVarient];
-            majorSequence2[0] = new KeySequence { Note = 0, KeyType = KeyType.Major };
-            majorSequence2[1] = new KeySequence { Note = 0, KeyType = KeyType.Major };
-            majorSequence2[2] = new KeySequence { Note = -7,KeyType = KeyType.Minor };
-            majorSequence2[3] = new KeySequence { Note = -5, KeyType = KeyType.Major };
+            var majorSequence2 = new Stack<KeySequence>(_sequencesPerVarient);
+            majorSequence2.Push( new KeySequence { Note = 0, KeyType = KeyType.Major } );
+            majorSequence2.Push( new KeySequence { Note = 0, KeyType = KeyType.Major } );
+            majorSequence2.Push( new KeySequence { Note = -7,KeyType = KeyType.Minor } );
+            majorSequence2.Push( new KeySequence { Note = -5, KeyType = KeyType.Major } );
 
-            var minorSequence1 = new KeySequence[_sequencesPerVarient];
-            minorSequence1[0] = new KeySequence { Note = 0, KeyType = KeyType.Minor };
-            minorSequence1[1] = new KeySequence { Note = -4, KeyType = KeyType.Major };
-            minorSequence1[2] = new KeySequence { Note = 5, KeyType = KeyType.Major };
-            minorSequence1[3] = new KeySequence { Note = -2, KeyType = KeyType.Major };
+            var minorSequence1 = new Stack<KeySequence>(_sequencesPerVarient);
+            minorSequence1.Push( new KeySequence { Note = 0, KeyType = KeyType.Minor } );
+            minorSequence1.Push( new KeySequence { Note = -4, KeyType = KeyType.Major } );
+            minorSequence1.Push( new KeySequence { Note = 5, KeyType = KeyType.Major } );
+            minorSequence1.Push( new KeySequence { Note = -2, KeyType = KeyType.Major } );
 
-            var minorSequence2 = new KeySequence[_sequencesPerVarient];
-            minorSequence2[0] = new KeySequence { Note = 0, KeyType = KeyType.Minor };
-            minorSequence2[1] = new KeySequence { Note = -2, KeyType = KeyType.Major };
-            minorSequence2[2] = new KeySequence { Note = -4, KeyType = KeyType.Major };
-            minorSequence2[3] = new KeySequence { Note = -5, KeyType = KeyType.Minor };
+            var minorSequence2 = new Stack<KeySequence>(_sequencesPerVarient);
+            minorSequence2.Push( new KeySequence { Note = 0, KeyType = KeyType.Minor } );
+            minorSequence2.Push( new KeySequence { Note = -2, KeyType = KeyType.Major } );
+            minorSequence2.Push( new KeySequence { Note = -4, KeyType = KeyType.Major } );
+            minorSequence2.Push( new KeySequence { Note = -5, KeyType = KeyType.Minor } );
            
             var majorSequenceVariants = new List<KeySequenceVariant>();
             var minorSequenceVariants = new List<KeySequenceVariant>();
 
-            majorSequenceVariants.Add( new KeySequenceVariant{ KeySequences = majorSequence1 });
-            majorSequenceVariants.Add( new KeySequenceVariant{ KeySequences = majorSequence2 });
-            minorSequenceVariants.Add( new KeySequenceVariant{ KeySequences = minorSequence1 });
-            minorSequenceVariants.Add( new KeySequenceVariant{ KeySequences = minorSequence2 });
+            majorSequenceVariants.Add( new KeySequenceVariant{ KeySequence = majorSequence1 });
+            majorSequenceVariants.Add( new KeySequenceVariant{ KeySequence = majorSequence2 });
+            minorSequenceVariants.Add( new KeySequenceVariant{ KeySequence = minorSequence1 });
+            minorSequenceVariants.Add( new KeySequenceVariant{ KeySequence = minorSequence2 });
             
             _registry.Add(KeyType.Major, majorSequenceVariants);
             _registry.Add(KeyType.Minor, minorSequenceVariants);

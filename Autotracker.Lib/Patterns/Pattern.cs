@@ -13,7 +13,12 @@ namespace Autotracker.Lib
     /// </summary>
     public class Pattern : IPattern
     {
-        public byte[] Data { get; set; }
-        public int Rows { get; set; }
+        public int Id { get; set; }
+        public int Size { get; set; }
+        public Pattern(int id, int size)
+        {
+            Id = id;
+            Size = size;
+        }
     }
 }

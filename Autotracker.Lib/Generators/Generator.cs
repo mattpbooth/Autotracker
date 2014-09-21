@@ -13,7 +13,7 @@ namespace Autotracker.Lib
     public abstract class Generator : IGenerator
     {
         public int Size { get; set; }
-        public abstract void ApplyNotes(IPattern pattern, IStrategy strategy);
+        public abstract void ApplyNotes(IPattern pattern, IStrategy strategy, IKey chord);
 
         public abstract IGenerator Clone();
 

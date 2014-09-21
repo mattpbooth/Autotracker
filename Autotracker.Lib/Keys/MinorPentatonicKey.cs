@@ -9,6 +9,11 @@ namespace Autotracker.Lib
 {
     public class MinorPentatonicKey : GenericOctaveKey
     {
+        public MinorPentatonicKey(int baseNote)
+            : base(baseNote)
+        {
+        }
+
         public override KeyType KeyType { get { return KeyType.MinorPentatonic; } }
         private readonly bool[] _keyMask = { true, false,
                                              false,

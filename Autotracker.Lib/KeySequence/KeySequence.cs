@@ -17,7 +17,7 @@ namespace Autotracker.Lib
 
     public class KeySequenceVariant : IPrototype<KeySequenceVariant>
     {
-        public KeySequence[] KeySequences{get;set;}
+        public Stack<KeySequence> KeySequence{get;set;}
 
         public KeySequenceVariant Clone()
         {

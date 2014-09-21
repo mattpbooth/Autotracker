@@ -34,14 +34,14 @@
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.#ctor">
             <summary>Initializes a new instance of type StubIGenerator</summary>
         </member>
-        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.ApplyNotesIPatternIStrategy">
-            <summary>Sets the stub of IGenerator.ApplyNotes(IPattern pattern, IStrategy strategy)</summary>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.ApplyNotesIPatternIStrategyIKey">
+            <summary>Sets the stub of IGenerator.ApplyNotes(IPattern pattern, IStrategy strategy, IKey chord)</summary>
         </member>
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.AttachBackingFieldToSize">
             <summary>Attaches delegates to emulate StubIGenerator.Size as a property with a backing field.</summary>
         </member>
-        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.ali::Autotracker#Lib#Interfaces#IGenerator#ApplyNotes(Autotracker.Lib.Interfaces.IPattern,Autotracker.Lib.Interfaces.IStrategy)">
-            <summary>Sets the stub of IGenerator.ApplyNotes(IPattern pattern, IStrategy strategy)</summary>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.ali::Autotracker#Lib#Interfaces#IGenerator#ApplyNotes(Autotracker.Lib.Interfaces.IPattern,Autotracker.Lib.Interfaces.IStrategy,Autotracker.Lib.Interfaces.IKey)">
+            <summary>Sets the stub of IGenerator.ApplyNotes(IPattern pattern, IStrategy strategy, IKey chord)</summary>
         </member>
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIGenerator.ali::Autotracker#Lib#Interfaces#IPrototype{Autotracker#Lib#Interfaces#IGenerator}#Clone">
             <summary>Sets the stub of IPrototype`1.Clone()</summary>
@@ -100,29 +100,29 @@
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIPattern.#ctor">
             <summary>Initializes a new instance of type StubIPattern</summary>
         </member>
-        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIPattern.AttachBackingFieldToData">
-            <summary>Attaches delegates to emulate StubIPattern.Data as a property with a backing field.</summary>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIPattern.AttachBackingFieldToId">
+            <summary>Attaches delegates to emulate StubIPattern.Id as a property with a backing field.</summary>
         </member>
-        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIPattern.AttachBackingFieldToRows">
-            <summary>Attaches delegates to emulate StubIPattern.Rows as a property with a backing field.</summary>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIPattern.AttachBackingFieldToSize">
+            <summary>Attaches delegates to emulate StubIPattern.Size as a property with a backing field.</summary>
         </member>
-        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIPattern.DataGet">
-            <summary>Sets the stub of IPattern.get_Data()</summary>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIPattern.IdGet">
+            <summary>Sets the stub of IPattern.get_Id()</summary>
         </member>
-        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIPattern.DataSetByteArray">
-            <summary>Sets the stub of IPattern.set_Data(Byte[] value)</summary>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIPattern.IdSetInt32">
+            <summary>Sets the stub of IPattern.set_Id(Int32 value)</summary>
         </member>
-        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIPattern.RowsGet">
-            <summary>Sets the stub of IPattern.get_Rows()</summary>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIPattern.SizeGet">
+            <summary>Sets the stub of IPattern.get_Size()</summary>
         </member>
-        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIPattern.RowsSetInt32">
-            <summary>Sets the stub of IPattern.set_Rows(Int32 value)</summary>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIPattern.SizeSetInt32">
+            <summary>Sets the stub of IPattern.set_Size(Int32 value)</summary>
         </member>
-        <member name="P:Autotracker.Lib.Interfaces.Fakes.StubIPattern.ali::Autotracker#Lib#Interfaces#IPattern#Data">
-            <summary>Sets the stub of IPattern.get_Data()</summary>
+        <member name="P:Autotracker.Lib.Interfaces.Fakes.StubIPattern.ali::Autotracker#Lib#Interfaces#IPattern#Id">
+            <summary>Sets the stub of IPattern.get_Id()</summary>
         </member>
-        <member name="P:Autotracker.Lib.Interfaces.Fakes.StubIPattern.ali::Autotracker#Lib#Interfaces#IPattern#Rows">
-            <summary>Sets the stub of IPattern.get_Rows()</summary>
+        <member name="P:Autotracker.Lib.Interfaces.Fakes.StubIPattern.ali::Autotracker#Lib#Interfaces#IPattern#Size">
+            <summary>Sets the stub of IPattern.get_Size()</summary>
         </member>
         <member name="T:Autotracker.Lib.Interfaces.Fakes.StubIPrototype`1">
             <summary>Stub type of Autotracker.Lib.Interfaces.IPrototype`1</summary>
@@ -250,11 +250,47 @@
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.#ctor">
             <summary>Initializes a new instance of type StubIStrategy</summary>
         </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.AttachBackingFieldToBlockSize">
+            <summary>Attaches delegates to emulate StubIStrategy.BlockSize as a property with a backing field.</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.AttachBackingFieldToKey">
+            <summary>Attaches delegates to emulate StubIStrategy.Key as a property with a backing field.</summary>
+        </member>
+        <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.AttachBackingFieldToRhythm">
+            <summary>Attaches delegates to emulate StubIStrategy.Rhythm as a property with a backing field.</summary>
+        </member>
         <member name="M:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.ali::Autotracker#Lib#Interfaces#IStrategy#GeneratePattern(System.Collections.Generic.IEnumerable{Autotracker.Lib.Interfaces.IGenerator},Autotracker.Lib.Interfaces.IPattern)">
             <summary>Sets the stub of IStrategy.GeneratePattern(IEnumerable`1&lt;IGenerator&gt; generators, IPattern pattern)</summary>
         </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.BlockSizeGet">
+            <summary>Sets the stub of IStrategy.get_BlockSize()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.BlockSizeSetInt32">
+            <summary>Sets the stub of IStrategy.set_BlockSize(Int32 value)</summary>
+        </member>
         <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.GeneratePatternIEnumerableOfIGeneratorIPattern">
             <summary>Sets the stub of IStrategy.GeneratePattern(IEnumerable`1&lt;IGenerator&gt; generators, IPattern pattern)</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.KeyGet">
+            <summary>Sets the stub of IStrategy.get_Key()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.KeySetIKey">
+            <summary>Sets the stub of IStrategy.set_Key(IKey value)</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.RhythmGet">
+            <summary>Sets the stub of IStrategy.get_Rhythm()</summary>
+        </member>
+        <member name="F:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.RhythmSetIEnumerableOfByte">
+            <summary>Sets the stub of IStrategy.set_Rhythm(IEnumerable`1&lt;Byte&gt; value)</summary>
+        </member>
+        <member name="P:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.ali::Autotracker#Lib#Interfaces#IStrategy#BlockSize">
+            <summary>Sets the stub of IStrategy.get_BlockSize()</summary>
+        </member>
+        <member name="P:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.ali::Autotracker#Lib#Interfaces#IStrategy#Key">
+            <summary>Sets the stub of IStrategy.get_Key()</summary>
+        </member>
+        <member name="P:Autotracker.Lib.Interfaces.Fakes.StubIStrategy.ali::Autotracker#Lib#Interfaces#IStrategy#Rhythm">
+            <summary>Sets the stub of IStrategy.get_Rhythm()</summary>
         </member>
         <member name="T:Autotracker.Lib.Interfaces.Fakes.StubITracker">
             <summary>Stub type of Autotracker.Lib.Interfaces.ITracker</summary>

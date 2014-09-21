@@ -21,7 +21,7 @@ namespace Autotracker.Lib
             HiHatClosed = hiHatClosedSampler;
             HiHatOpen = hiHatOpenSampler;
         }
-        public override void ApplyNotes(IPattern pattern, IStrategy strategy)
+        public override void ApplyNotes(IPattern pattern, IStrategy strategy, IKey chord)
         {
 
         }

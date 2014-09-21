@@ -24,15 +24,15 @@ namespace Autotracker.Lib.Test.Unit
         [TestInitialize]
         public void Setup()
         {
-            _majorKey = new MajorKey { BaseNote = _baseNote };
-            _minorKey = new MinorKey { BaseNote = _baseNote };
-            _majorPentatonicKey = new MajorPentatonicKey { BaseNote = _baseNote };
-            _minorPentatonicKey = new MinorPentatonicKey { BaseNote = _baseNote };
+            _majorKey = new MajorKey(_baseNote );
+            _minorKey = new MinorKey( _baseNote );
+            _majorPentatonicKey = new MajorPentatonicKey( _baseNote );
+            _minorPentatonicKey = new MinorPentatonicKey( _baseNote );
             
             // Check a random key change
-            _majorKeyAlt = new MajorKey { BaseNote = _keyChangeBaseNote };
+            _majorKeyAlt = new MajorKey (_keyChangeBaseNote );
 
-            _majorKeyHigherOctave = new MajorKey { BaseNote = _keyOctaveChangeBaseNote };
+            _majorKeyHigherOctave = new MajorKey ( _keyOctaveChangeBaseNote );
         }
 
         [TestMethod]

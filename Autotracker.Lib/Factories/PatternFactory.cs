@@ -9,9 +9,17 @@ namespace Autotracker.Lib
 {
     public class PatternFactory: IFactory<IPattern>
     {
+        int _patternId;
+        int _patternSize;
+
+        public PatternFactory(int patternSize = 128)
+        {
+            _patternSize = patternSize;
+        }
+
         public IPattern Get()
         {
-            return new Pattern();
+            return new Pattern(_patternId++, _patternSize);
         }
     }
 }

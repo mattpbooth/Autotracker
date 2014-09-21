@@ -9,12 +9,13 @@ namespace Autotracker.Lib
 {
     public class KeyFactory : PrototypeRegistryFactory<IKey, KeyType>
     {
-        public KeyFactory()
+        const int _baseNote = 60;
+        public KeyFactory(int baseNote = _baseNote)
         {
-            _registry.Add(KeyType.Major, new MajorKey());
-            _registry.Add(KeyType.Minor, new MinorKey());
-            _registry.Add(KeyType.MajorPentatonic, new MajorPentatonicKey());
-            _registry.Add(KeyType.MinorPentatonic, new MinorPentatonicKey());
+            _registry.Add(KeyType.Major, new MajorKey(baseNote));
+            _registry.Add(KeyType.Minor, new MinorKey(baseNote));
+            _registry.Add(KeyType.MajorPentatonic, new MajorPentatonicKey(baseNote));
+            _registry.Add(KeyType.MinorPentatonic, new MinorPentatonicKey(baseNote));
         }
     }
 }

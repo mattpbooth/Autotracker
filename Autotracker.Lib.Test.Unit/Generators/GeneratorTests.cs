@@ -27,7 +27,7 @@ namespace Autotracker.Lib.Test.Unit
             var ambientMelody = _generatorFactory.GetByKey(GeneratorType.AmbientMelody);
             try 
             {
-                ambientMelody.ApplyNotes(new StubIPattern(), new StubIStrategy());
+                ambientMelody.ApplyNotes(new StubIPattern(), new StubIStrategy(), new StubIKey());
             }
             catch(Exception e)
             {
@@ -41,7 +41,7 @@ namespace Autotracker.Lib.Test.Unit
             var bass = _generatorFactory.GetByKey(GeneratorType.Bass);
             try
             {
-                bass.ApplyNotes(new StubIPattern(), new StubIStrategy());
+                bass.ApplyNotes(new StubIPattern(), new StubIStrategy(), new StubIKey());
             }
             catch (Exception e)
             {
@@ -55,7 +55,7 @@ namespace Autotracker.Lib.Test.Unit
             var drums = _generatorFactory.GetByKey(GeneratorType.Drums);
             try
             {
-                drums.ApplyNotes(new StubIPattern(), new StubIStrategy());
+                drums.ApplyNotes(new StubIPattern(), new StubIStrategy(), new StubIKey() );
             }
             catch (Exception e)
             {

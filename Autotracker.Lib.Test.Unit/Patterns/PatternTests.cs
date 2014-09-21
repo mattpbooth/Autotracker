@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Autotracker.Lib.Interfaces
+namespace Autotracker.Lib.Test.Unit.Patterns
 {
-    public interface IPattern
+    class PatternTests
     {
-        int Id { get; set; }
-        int Size { get; set; }
     }
 }

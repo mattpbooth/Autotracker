@@ -9,6 +9,6 @@ namespace Autotracker.Lib.Interfaces
     public interface IGenerator : IPrototype<IGenerator>
     {
         int Size { get; set; }
-        void ApplyNotes(IPattern pattern, IStrategy strategy);
+        void ApplyNotes(IPattern pattern, IStrategy strategy, IKey chord);
     }
 }

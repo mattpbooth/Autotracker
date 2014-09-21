@@ -9,6 +9,11 @@ namespace Autotracker.Lib
 {
     public class MajorKey : GenericOctaveKey
     {
+        public MajorKey(int baseNote)
+            : base(baseNote)
+        {
+        }
+
         public override KeyType KeyType { get { return KeyType.Major; } }
         private readonly bool[] _keyMask = { true, false, 
                                              true, false,

@@ -20,6 +20,11 @@ namespace Autotracker.ImpulseTracker.Lib
         private const byte _impulseTracerDefaultEffectType = 0;
         private const byte _impulseTracerDefaultEffectParameter = 0;
 
+        public ImpulseTrackerPattern(int id, int size)
+            : base(id, size)
+        {
+
+        }
         private struct ImpulseTrackerStruct
         {
             public byte Note{get;set;}

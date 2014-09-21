@@ -13,6 +13,11 @@ namespace Autotracker.Lib
 
         public int BaseNote { get; set; }
 
+        public GenericOctaveKey(int baseNote)
+        {
+            BaseNote = baseNote;
+        }
+
         public bool HasNote(int Note)
         {
             var index = Math.Max(0, (Note - BaseNote));

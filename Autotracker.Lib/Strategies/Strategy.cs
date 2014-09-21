@@ -13,26 +13,23 @@ namespace Autotracker.Lib
     /// </summary>
     public class Strategy : IStrategy
     {
-        public int BaseNote { get; internal set; }
-        public IKey Key { get; internal set; }
-        public int PatternSize { get; internal set; }
-        public int BlockSize { get; internal set; }
-        public float RhythmSpeed { get; internal set; }
-        public float Rhythm { get; internal set; }
-        public int PatternId { get; internal set; }
+        public int BaseNote { get; set; }
+        public IKey Key { get; set; }
+        public int BlockSize { get; set; }
+        public int RhythmSpeed { get; set; }
+        public IEnumerable<byte> Rhythm { get; set; }
 
-        // TODO: DI
+        public IRegistryFactory<IKey, KeyType> KeyFactory { get; internal set; }
         public IRegistryFactory<KeySequenceVariant, KeyType> KeySequenceFactory { get; internal set; }
 
         public class Builder : IBuilder<Strategy>
         {
             private int _baseNote;
             private IKey _key;
-            private int _patternSize;
             private int _blockSize;
-            private int _patternId;
-            private float _rhythmSpeed;
-            private float _rhythm;
+            private int _rhythmSpeed;
+            private IEnumerable<byte> _rhythm;
+            private IRegistryFactory<IKey, KeyType> _keyFactory;
             private IRegistryFactory<KeySequenceVariant, KeyType> _keySequenceFactory;
 
             public Builder WithBaseNote(int baseNote)
@@ -47,33 +44,27 @@ namespace Autotracker.Lib
                 return this;
             }
 
-            public Builder WithPatternSize(int patSize)
-            {
-                _patternSize = patSize;
-                return this;
-            }
-
             public Builder WithBlockSize(int blockSize)
             {
                 _blockSize = blockSize;
                 return this;
             }
 
-            public Builder WithPatternId(int patId)
-            {
-                _patternId = patId;
-                return this;
-            }
-
-            public Builder WithRhythmSpeed(float rhythmSpeed)
+            public Builder WithRhythmSpeed(int rhythmSpeed)
             {
                 _rhythmSpeed = rhythmSpeed;
                 return this;
             }
 
-            public Builder WithRhythm(float rhythm)
+            public Builder WithRhythm(IEnumerable<byte> rhythm)
             {
                 _rhythm = rhythm;
+                return this;
+            }
+
+            public Builder WithKeyFactory(IRegistryFactory<IKey, KeyType> keyFactory)
+            {
+                _keyFactory = keyFactory;
                 return this;
             }
 
@@ -90,9 +81,9 @@ namespace Autotracker.Lib
                     BaseNote = _baseNote,
                     Key = _key,
                     BlockSize = _blockSize,
-                    PatternId = _patternId,
                     Rhythm = _rhythm,
                     RhythmSpeed = _rhythmSpeed,
+                    KeyFactory = _keyFactory,
                     KeySequenceFactory = _keySequenceFactory
                 };
             }
@@ -105,31 +96,22 @@ namespace Autotracker.Lib
                 return false;
             }
 
-            //for (int i = 0; i <= iterations; ++i)
-            //{
-            //    var sequenceVarient = _keySequenceFactory.Get(Key.KeyType);               
+            //var sequence = (pattern.Id % 8 >= 4) 
+            var sequence = KeySequenceFactory.GetByKey(Key.KeyType);
 
-            //    // TODO: Enforce the pattern, block size relationship.
-            //    //for(int j = 0; j <= PatternSize; j += BlockSize)
-            //    //{
-            //      //  var keySequence = sequenceVarient[j / BlockSize];
-            //        //k,kt = kseq.pop(0)
-            //        //kchord = kt(self.basenote+k)
-            //        //for chn,gen in self.gens:
-            //        //    gen.apply_notes(chn, pat, self, self.rhythm, i, self.blocksize, self.key, kchord)
+            for (int i = 0; i < pattern.Size; i += BlockSize)
+            {
+                // Create a new key from the sequence relative to our base note
+                var currentKeySequence = sequence.KeySequence.Pop();
 
-            //        //kseq.append(k)
-            //    //}
-                    
-
-            //    //self.pats.append(pat)
-            //    //Patterns.Add(pattern);
-
-
-            //    //self.pat_idx += 1
-
-            //    //return pat
-            //}
+                var chord = KeyFactory.GetByKey(currentKeySequence.KeyType);
+                chord.BaseNote = BaseNote + currentKeySequence.Note;
+                
+                foreach (var g in generators)
+                {
+                    g.ApplyNotes(pattern, this, chord);
+                }
+            }
             return true;
         }
     }
